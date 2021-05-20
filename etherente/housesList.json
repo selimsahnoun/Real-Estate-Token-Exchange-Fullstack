@@ -1,0 +1,249 @@
+{
+	"HousesList": [
+		{
+			"id": 1,
+			"propertyHighlights": {
+				"address": "18481 Westphalia St, Detroit, MI 48205",
+				"city": "Miami",
+				"expectedYield": "11.27",
+				"rentStartDate": "2020-12-28",
+				"rentperToken": "5.49",
+				"tokenPrice": "48.66",
+				"totalTokens": "1,200",
+				"propertyType": "Single Family",
+				"neighborhood": "Bethune Community",
+				"area": "1,552",
+				"lotSize": "4,356",
+				"bedrooms": "3 Bed / 1 Bath",
+				"rented": "Fully Rented",
+				"legalLiability": "No"
+			},
+			"financialHighlights": {
+				"grossRentPerYear": "9,300",
+				"grossRentPerMonth": "775",
+				"monthlyCosts": "-226.42",
+				"netRentPerMonth": "548.58",
+				"netRentPerYear": "6,582.96",
+				"totalInvestment": "600,000",
+				"expectedYield": "11.27",
+				"maintenanceReserve": "--",
+				"dateOfPurchase": "15-11-2020"
+			},
+			"pictures": [
+				{
+					"url": "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=967&q=80"
+				},
+				{
+					"url": "https://images.unsplash.com/photo-1480074568708-e7b720bb3f09?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1353&q=80"
+				},
+				{
+					"url": "https://images.unsplash.com/photo-1448630360428-65456885c650?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1347&q=80"
+				}
+			]
+		},
+		{
+			"id": 2,
+			"propertyHighlights": {
+				"address": "1244 S. Avers St, Moscow, IL 60623",
+				"city": "Moscow",
+				"expectedYield": "9.18",
+				"rentStartDate": "2020-12-28",
+				"rentperToken": "5.49",
+				"tokenPrice": "48.66",
+				"totalTokens": "1,200",
+				"propertyType": "Single Family",
+				"neighborhood": "Bethune Community",
+				"area": "1,552",
+				"lotSize": "4,356",
+				"bedrooms": "3 Bed / 1 Bath",
+				"rented": "Fully Rented",
+				"legalLiability": "No"
+			},
+			"financialHighlights": {
+				"grossRentPerYear": "3,300",
+				"grossRentPerMonth": "775",
+				"monthlyCosts": "-226.42",
+				"netRentPerMonth": "548.58",
+				"netRentPerYear": "6,582.96",
+				"totalInvestment": "58,392",
+				"expectedYield": "11.27",
+				"maintenanceReserve": "--",
+				"dateOfPurchase": "12-10-2020",
+				"totalPrice": "500,000"
+			},
+			"pictures": [
+				"https://images.unsplash.com/photo-1570129477492-45c003edd2be?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+				"https://images.unsplash.com/photo-1564013799919-ab600027ffc6?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1350&q=80",
+				"https://images.unsplash.com/photo-1583608205776-bfd35f0d9f83?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1350&q=80"
+			]
+		},
+		{
+			"id": 3,
+			"propertyHighlights": {
+				"address": "89 Rue du 7 novembre 75007",
+				"city": "Tunis",
+				"expectedYield": "10.2",
+				"rentStartDate": "2020-12-28",
+				"rentperToken": "5.49",
+				"tokenPrice": "48.66",
+				"totalTokens": "1,200",
+				"propertyType": "Single Family",
+				"neighborhood": "Bethune Community",
+				"area": "1,552",
+				"lotSize": "4,356",
+				"bedrooms": "3 Bed / 1 Bath",
+				"rented": "Fully Rented",
+				"legalLiability": "No"
+			},
+			"financialHighlights": {
+				"grossRentPerYear": "15,300",
+				"grossRentPerMonth": "775",
+				"monthlyCosts": "-226.42",
+				"netRentPerMonth": "548.58",
+				"netRentPerYear": "6,582.96",
+				"totalInvestment": "200,000",
+				"expectedYield": "11.27",
+				"maintenanceReserve": "--",
+				"dateOfPurchase": "11-09-2020",
+				"totalPrice": "300,000"
+			},
+			"pictures": [
+				{
+					"url": "https://images.unsplash.com/photo-1513584684374-8bab748fbf90?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1346&q=80"
+				},
+				{
+					"url": "https://images.unsplash.com/photo-1488707872600-5507977fe355?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+				},
+				{
+					"url": "https://images.unsplash.com/photo-1430285561322-7808604715df?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+				}
+			]
+		},
+		{
+			"id": 4,
+			"propertyHighlights": {
+				"address": "1202  Aaron Smith Drive",
+				"city": "Harrisburg",
+				"expectedYield": "10.2",
+				"rentStartDate": "2020-12-28",
+				"rentperToken": "5.49",
+				"tokenPrice": "48.66",
+				"totalTokens": "1,200",
+				"propertyType": "Single Family",
+				"neighborhood": "Bethune Community",
+				"area": "1,552",
+				"lotSize": "4,356",
+				"bedrooms": "3 Bed / 1 Bath",
+				"rented": "Fully Rented",
+				"legalLiability": "No"
+			},
+			"financialHighlights": {
+				"grossRentPerYear": "15,300",
+				"grossRentPerMonth": "775",
+				"monthlyCosts": "-226.42",
+				"netRentPerMonth": "548.58",
+				"netRentPerYear": "6,582.96",
+				"totalInvestment": "200,000",
+				"expectedYield": "11.27",
+				"maintenanceReserve": "--",
+				"dateOfPurchase": "11-09-2020",
+				"totalPrice": "300,000"
+			},
+			"pictures": [
+				{
+					"url": "https://cf.bstatic.com/images/hotel/max1024x768/138/138308947.jpg"
+				},
+				{
+					"url": "https://www.collater.al/wp-content/uploads/2019/12/House-in-the-Landscape-Collater.al-2.jpg"
+				},
+				{
+					"url": "https://images.unsplash.com/photo-1430285561322-7808604715df?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+				}
+			]
+		},
+		{
+			"id": 5,
+			"propertyHighlights": {
+				"address": "3036  Edwards Street",
+				"city": "Greenville",
+				"expectedYield": "10.2",
+				"rentStartDate": "2020-12-28",
+				"rentperToken": "5.49",
+				"tokenPrice": "48.66",
+				"totalTokens": "1,200",
+				"propertyType": "Single Family",
+				"neighborhood": "Bethune Community",
+				"area": "1,552",
+				"lotSize": "4,356",
+				"bedrooms": "3 Bed / 1 Bath",
+				"rented": "Fully Rented",
+				"legalLiability": "No"
+			},
+			"financialHighlights": {
+				"grossRentPerYear": "15,300",
+				"grossRentPerMonth": "775",
+				"monthlyCosts": "-226.42",
+				"netRentPerMonth": "548.58",
+				"netRentPerYear": "6,582.96",
+				"totalInvestment": "200,000",
+				"expectedYield": "11.27",
+				"maintenanceReserve": "--",
+				"dateOfPurchase": "11-09-2020",
+				"totalPrice": "300,000"
+			},
+			"pictures": [
+				{
+					"url": "https://cf.bstatic.com/images/hotel/max1024x768/135/135321167.jpg"
+				},
+				{
+					"url": "https://cf.bstatic.com/images/hotel/max1024x768/138/138308947.jpg"
+				},
+				{
+					"url": "https://images.unsplash.com/photo-1430285561322-7808604715df?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+				}
+			]
+		},
+		{
+			"id": 6,
+			"propertyHighlights": {
+				"address": "1251  Harter Street",
+				"city": "Dayton",
+				"expectedYield": "10.2",
+				"rentStartDate": "2020-12-28",
+				"rentperToken": "5.49",
+				"tokenPrice": "48.66",
+				"totalTokens": "1,200",
+				"propertyType": "Single Family",
+				"neighborhood": "Bethune Community",
+				"area": "1,552",
+				"lotSize": "4,356",
+				"bedrooms": "3 Bed / 1 Bath",
+				"rented": "Fully Rented",
+				"legalLiability": "No"
+			},
+			"financialHighlights": {
+				"grossRentPerYear": "15,300",
+				"grossRentPerMonth": "775",
+				"monthlyCosts": "-226.42",
+				"netRentPerMonth": "548.58",
+				"netRentPerYear": "6,582.96",
+				"totalInvestment": "200,000",
+				"expectedYield": "11.27",
+				"maintenanceReserve": "--",
+				"dateOfPurchase": "11-09-2020",
+				"totalPrice": "300,000"
+			},
+			"pictures": [
+				{
+					"url": "https://www.collater.al/wp-content/uploads/2019/12/House-in-the-Landscape-Collater.al-13.jpg"
+				},
+				{
+					"url": "https://cf.bstatic.com/images/hotel/max1024x768/138/138308947.jpg"
+				},
+				{
+					"url": "https://images.unsplash.com/photo-1430285561322-7808604715df?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+				}
+			]
+		}
+	]
+}

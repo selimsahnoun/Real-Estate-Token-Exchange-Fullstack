@@ -1,0 +1,82 @@
+.login-container {
+	display: flex;
+	flex-direction: column;
+	align-content: center;
+	justify-content: space-around;
+	box-shadow: 5px 5px 15px var(--box_shadow_color);
+	width: 400px;
+	min-height: 600px;
+	max-height: 900px;
+	padding: 40px;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background: white;
+	border-radius: 10px;
+	text-align: center;
+	h1 {
+		color: var(--themeColor);
+		font-size: 25px;
+		font-weight: 500;
+	}
+	input {
+		background: none;
+		display: block;
+		margin: 20px auto;
+		text-align: center;
+		border: 2px solid var(--secondThemeColor);
+		padding: 12px 10px;
+		width: 200px;
+		outline: none;
+		color: var(--themeColor);
+		border-radius: 20px;
+		transition: all 0.5s ease;
+	}
+	input:focus {
+		width: 280px;
+		border-color: var(--thirdThemeColor);
+	}
+	.login-button {
+		background-color: var(--thirdThemeColor);
+		color: var(--themeColor);
+		font-size: 20px;
+		cursor: pointer;
+		letter-spacing: 2px;
+		text-transform: uppercase;
+		text-align: center;
+		padding: 10px 10px;
+		border-radius: 40px;
+		width: 120px;
+		transition: all 0.3s ease 0s;
+		align-self: center;
+	}
+	.login-button:hover {
+		background-color: var(--secondThemeColor);
+		color: white;
+	}
+}
+.register-change {
+	color: var(--themeColor);
+	font-weight: 400;
+	font-size: 12px;
+}
+.register-change a {
+	color: red;
+}
+.errors-container {
+	margin-top: 10px;
+	box-shadow: 5px 5px 15px red;
+	min-width: 200px;
+	height: auto;
+	max-width: 350px;
+	background: white;
+	color: red;
+	font-weight: 600;
+	font-size: 14px;
+	padding: 10px;
+	align-self: center;
+}
+.errors-container li {
+	padding: 2px 0px;
+}
