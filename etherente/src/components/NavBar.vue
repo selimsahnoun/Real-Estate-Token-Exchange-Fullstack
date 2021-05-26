@@ -11,7 +11,7 @@
 					>
 				</li>
 				<li>
-					<router-link :to="{ name: 'Marketplace' }" :class="'navlinks'"
+					<router-link :to="{ name: 'TokenBuyers' }" :class="'navlinks'"
 						>About Tokens</router-link
 					>
 				</li>

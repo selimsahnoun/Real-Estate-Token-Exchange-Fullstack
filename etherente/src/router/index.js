@@ -5,7 +5,7 @@ import HousePage from '../views/HousePage.vue';
 import RegisterUser from '../views/RegisterUser.vue';
 import LoginUser from '../views/LoginUser.vue';
 import UserBoard from '../views/UserBoard.vue';
-
+import TokenBuyers from '../views/TokenBuyers.vue';
 const routes = [
 	{
 		path: '/',
@@ -39,6 +39,11 @@ const routes = [
 		path: '/user/login',
 		name: 'LoginUser',
 		component: LoginUser,
+	},
+	{
+		path: '/token/buyers',
+		name: 'TokenBuyers',
+		component: TokenBuyers,
 	},
 ];
 
