@@ -12,6 +12,7 @@ const {
 	hashAndSendtoDB,
 	signToken,
 	checkLoginCredentials,
+	checkEmailExist,
 } = require('./services/user.helpers.js');
 //-------Register User---------------------//
 //-------[POST]/register-------------------//
@@ -30,6 +31,7 @@ router.post('/register', async (req, res) => {
 				email: req.body.email,
 				ip_address: req.body.ip_address,
 				password: req.body.password,
+				admin: false,
 			};
 			//check if email already exists in the data base
 			const emailError = await checkUsedEmail(user.email);
@@ -51,9 +53,6 @@ router.post('/register', async (req, res) => {
 				const token = signToken(addedUser);
 				res.status(200).json({
 					token,
-					email: addedUser.email,
-					first_name: addedUser.first_name,
-					ip_address: addedUser.ip_address,
 				});
 			}
 		} else {
@@ -119,20 +118,14 @@ router.post('/tokenverification', async (req, res) => {
 	var errorsToSend = [];
 	try {
 		if (jwt.decode(req.body.token)) {
-			const userInfo = JSON.parse(
-				fs.readFileSync('./backend/routes/db/user2.json', {
-					encoding: 'utf8',
-				})
-			);
-			const decodedUserInfo = jwt.decode(req.body.token).userInfo;
-			if (decodedUserInfo.email === userInfo.email) {
-				const token = jwt.sign({ userInfo }, process.env.JWT_SECRET, {
+			const decodedUserInfo = jwt.decode(req.body.token);
+			const userFound = await checkEmailExist(decodedUserInfo.email);
+			if (userFound) {
+				const token = jwt.sign({ userFound }, process.env.JWT_SECRET, {
 					expiresIn: process.env.JWT_EXPIRES_IN,
 				});
 				res.status(200).json({
 					token,
-					email: userInfo.email,
-					name: userInfo.name,
 				});
 			} else {
 				errorsToSend.push('Invalid Token');

@@ -5,6 +5,7 @@ contract ImmoToken {
     string public symbol = "Stone";
     string public version = "Immo Token v1.0";
     uint256 public totalSupply;
+    uint256 public remainingSupply;
     event Transfer(
         address indexed _from, 
         address indexed _to, 
@@ -23,6 +24,7 @@ contract ImmoToken {
     constructor(uint256 _initialSupply) public  {
         balanceOf[msg.sender] = _initialSupply;
         totalSupply = _initialSupply;
+        remainingSupply= _initialSupply;
         
     }
     function transfer(address _to, uint256 _value) public returns (bool success) {
@@ -31,6 +33,7 @@ contract ImmoToken {
         // transfer to the recipient from the sender 
         balanceOf[msg.sender] -= _value;
         balanceOf[_to] += _value;
+        remainingSupply -= _value;
         // transfer event
         emit Transfer(msg.sender, _to, _value);
         return true;
@@ -59,5 +62,6 @@ contract ImmoToken {
             emit Transfer(_from, _to, _value);
             //return a boolean
             return true;
-        }  
+        } 
+
 } 

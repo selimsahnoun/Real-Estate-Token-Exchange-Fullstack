@@ -1,6 +1,6 @@
 import * as userService from '../../service/user.service.js';
-
 export const state = { user: null, registerErrors: null, loginErrors: null };
+
 export const mutations = {
 	SET_USER_DATA(state, userData) {
 		state.errors = null;

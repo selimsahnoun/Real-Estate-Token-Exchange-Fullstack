@@ -1,5 +1,8 @@
 import { createStore } from 'vuex';
 import * as user from './modules/user';
+import * as web3 from './modules/web3';
+import * as transactionService from '../service/transaction.service.js';
+
 export default createStore({
 	state: {
 		totalTokens: 0,
@@ -7,7 +10,6 @@ export default createStore({
 		accounts: null,
 		saleContract: null,
 		erc20Contract: null,
-		transferDone: false,
 	},
 	mutations: {
 		SET_WEB_3(state, payload) {
@@ -25,14 +27,19 @@ export default createStore({
 		SET_TOTAL_TOKENS(state, payload) {
 			state.totalTokens = payload;
 		},
-		SET_TRANSFER_DONE(state, payload) {
-			state.transferDone = payload;
-		},
 		async BUY_TOKENS(state, payload) {
 			await state.saleContract.methods
 				.buyTokens(payload.tokens)
 				.send({ from: state.accounts[0], value: payload.value })
-				.then(console.log);
+				.then((response) => {
+					console.log(response);
+					// send details to database
+					transactionService.addTransaction(
+						response.events.Sell.returnValues._buyer,
+						response.events.Sell.address,
+						response.events.Sell.returnValues._amount
+					);
+				});
 		},
 	},
 	actions: {
@@ -48,9 +55,6 @@ export default createStore({
 		setErc20Contract(context, event) {
 			context.commit('SET_ERC20_CONTRACT', event);
 		},
-		transferDone(context, event) {
-			context.commit('SET_TRANSFER_DONE', event);
-		},
 		buyTokens(context, event) {
 			context.commit('BUY_TOKENS', event);
 		},
@@ -62,6 +66,12 @@ export default createStore({
 				.call({ from: state.saleContract.options.address })
 				.then((totalSupply) => totalSupply);
 		},
+		getRemainingTokensInERC20: async (state) => {
+			return state.erc20Contract.methods
+				.remainingSupply()
+				.call({ from: state.saleContract.options.address })
+				.then((remainingSupply) => remainingSupply);
+		},
 		getTokensLeftForSale: async (state) => {
 			return state.erc20Contract.methods
 				.balanceOf(state.saleContract.options.address)
@@ -69,5 +79,5 @@ export default createStore({
 				.then((leftForSale) => leftForSale);
 		},
 	},
-	modules: { user },
+	modules: { user, web3 },
 });

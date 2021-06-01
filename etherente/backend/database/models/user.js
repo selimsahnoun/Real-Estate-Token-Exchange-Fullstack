@@ -8,6 +8,7 @@ const userSchema = new mongoose.Schema(
 		ip_address: String,
 		hashed_password: String,
 		salt: String,
+		admin: Boolean,
 	},
 	{
 		timestamps: true,

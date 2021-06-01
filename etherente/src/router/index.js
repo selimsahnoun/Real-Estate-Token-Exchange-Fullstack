@@ -6,6 +6,7 @@ import RegisterUser from '../views/RegisterUser.vue';
 import LoginUser from '../views/LoginUser.vue';
 import UserBoard from '../views/UserBoard.vue';
 import TokenBuyers from '../views/TokenBuyers.vue';
+import AdminBoard from '../views/AdminBoard.vue';
 const routes = [
 	{
 		path: '/',
@@ -44,6 +45,11 @@ const routes = [
 		path: '/token/buyers',
 		name: 'TokenBuyers',
 		component: TokenBuyers,
+	},
+	{
+		path: '/user/adminboard',
+		name: 'AdminBoard',
+		component: AdminBoard,
 	},
 ];
 

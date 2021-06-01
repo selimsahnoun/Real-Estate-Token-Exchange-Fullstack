@@ -53,6 +53,7 @@ exports.hashAndSendtoDB = async (user) => {
 		ip_address: user.ip_address,
 		hashed_password: hashPass,
 		salt: salt,
+		admin: false,
 	});
 	return addedUser;
 };
@@ -73,5 +74,13 @@ exports.checkLoginCredentials = async (email, password) => {
 		}
 	} else {
 		return { error: "This email doesn't exist" };
+	}
+};
+exports.checkEmailExist = async (email) => {
+	const dbUser = await userControllers.findEmail(email);
+	if (dbUser.email === email) {
+		return dbUser;
+	} else {
+		return false;
 	}
 };

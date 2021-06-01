@@ -21,8 +21,8 @@
 					>
 				</li>
 				<li>
-					<router-link :to="{ name: 'Marketplace' }" :class="'navlinks'"
-						>FAQ</router-link
+					<router-link :to="{ name: 'AdminBoard' }" :class="'navlinks'"
+						>Admin Board</router-link
 					>
 				</li>
 			</ul>
