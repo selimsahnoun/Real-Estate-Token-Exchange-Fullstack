@@ -23,3 +23,16 @@ exports.addTransaction = async (from_address, to_address, tokens) => {
 	});
 	return addedTransaction;
 };
+exports.fetchAllAddress = async () => {
+	const allTransactions = await transactionControllers.fetchAllTransactions();
+	var uniqueAddress = [];
+	for (var i = 0; i < allTransactions.length; i++) {
+		if (!uniqueAddress.includes(allTransactions[i].from_address)) {
+			uniqueAddress.push(allTransactions[i].from_address);
+		} else if (!uniqueAddress.includes(allTransactions[i].to_address)) {
+			uniqueAddress.push(allTransactions[i].to_address);
+		}
+	}
+
+	return uniqueAddress;
+};

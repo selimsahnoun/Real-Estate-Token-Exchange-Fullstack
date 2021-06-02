@@ -1,7 +1,6 @@
 import * as transactionService from '../../service/transaction.service.js';
 
 export const state = {
-	totalTokens: 0,
 	web3: null,
 	accounts: null,
 	saleContract: null,
@@ -72,5 +71,11 @@ export const getters = {
 			.balanceOf(state.saleContract.options.address)
 			.call({ from: state.saleContract.options.address })
 			.then((leftForSale) => leftForSale);
+	},
+	getBalance: (state) => (address) => {
+		return state.erc20Contract.methods
+			.balanceOf(address)
+			.call({ from: state.saleContract.options.address })
+			.then((balance) => balance);
 	},
 };

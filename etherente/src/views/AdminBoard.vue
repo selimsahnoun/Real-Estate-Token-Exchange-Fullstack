@@ -1,5 +1,5 @@
 <template>
-	<div v-if="contractCalled">
+	<div class="admin-container" v-if="contractCalled">
 		<SendTokens />
 		<TransactionList />
 	</div>
@@ -56,4 +56,6 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+@import '../assets/styles/views/_adminboard.scss';
+</style>

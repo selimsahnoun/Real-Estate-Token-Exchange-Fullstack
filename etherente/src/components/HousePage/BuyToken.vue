@@ -83,21 +83,14 @@ export default {
 		}
 	},
 	computed: {
-		...mapState([
-			'web3',
-			'accounts',
-			'saleContract',
-			'erc20Contract',
-			'storageValue',
-			'transferDone',
-		]),
+		...mapState(['web3']),
 		...mapGetters(['getTotalTokens', 'getTokensLeftForSale']),
 	},
 	methods: {
 		async purchaseTokens() {
 			let purchase = {
 				tokens: this.tokensToBuy,
-				value: this.web3.utils.toWei(this.totalAmount.toString(), 'ether'),
+				value: this.web3.web3.utils.toWei(this.totalAmount.toString(), 'ether'),
 			};
 			this.$store.dispatch('buyTokens', purchase);
 			this.tokensToBuy = 0;

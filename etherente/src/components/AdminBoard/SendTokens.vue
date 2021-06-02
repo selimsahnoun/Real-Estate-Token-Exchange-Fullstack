@@ -38,7 +38,7 @@ export default {
 	async mounted() {
 		try {
 			this.progressBar = document.getElementsByClassName('progress-bar')[0];
-			if (this.erc20Contract) {
+			if (this.web3.erc20Contract) {
 				this.totalTokens = await this.getTotalTokens;
 				this.tokensForTransfer = await this.getRemainingTokensInERC20;
 			}
@@ -53,21 +53,14 @@ export default {
 		}
 	},
 	computed: {
-		...mapState([
-			'web3',
-			'accounts',
-			'saleContract',
-			'erc20Contract',
-			'storageValue',
-			'transferDone',
-		]),
+		...mapState(['web3']),
 		...mapGetters(['getTotalTokens', 'getRemainingTokensInERC20']),
 	},
 	methods: {
 		async sendTokensFromERC20() {
-			const transferStatus = await this.erc20Contract.methods
-				.transfer(this.saleContract.options.address, this.tokensToTransfer)
-				.send({ from: this.accounts[0] });
+			const transferStatus = await this.web3.erc20Contract.methods
+				.transfer(this.web3.saleContract.options.address, this.tokensToTransfer)
+				.send({ from: this.web3.accounts[0] });
 			location.reload();
 		},
 		progressBarWidth() {

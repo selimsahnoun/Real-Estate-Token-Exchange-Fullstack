@@ -10,13 +10,9 @@ export const addTransaction = (from_address, to_address, tokens) => {
 		.then((response) => response)
 		.catch((err) => console.log(err.response.data.errors));
 };
-export const fetchAllTransactions = () => {
+export const fetchAllAddresses = () => {
 	return axios
-		.get(`http://localhost:8081/transaction/fetchalltransactions`, {
-			from_address,
-			to_address,
-			tokens,
-		})
-		.then((response) => response)
+		.get(`http://localhost:8081/transaction/fetchalladdresses`)
+		.then((response) => response.data.allAddresses)
 		.catch((err) => console.log(err.response.data.errors));
 };

@@ -4,3 +4,6 @@ const Transaction = require('./../models/Transaction.js');
 exports.createTransaction = (transaction) => {
 	return Transaction.create(transaction);
 };
+exports.fetchAllTransactions = () => {
+	return Transaction.find();
+};

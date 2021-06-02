@@ -3,6 +3,7 @@ const router = express.Router();
 const {
 	checkMissingElement,
 	addTransaction,
+	fetchAllAddress,
 } = require('./services/transaction.helpers.js');
 // add transaction to database
 router.post('/addtransaction', async (req, res) => {
@@ -40,5 +41,17 @@ router.post('/addtransaction', async (req, res) => {
 		});
 	}
 });
-
+router.get('/fetchalladdresses', async (req, res) => {
+	try {
+		// add transaction to database
+		const allAddresses = await fetchAllAddress();
+		res.status(200).json({
+			allAddresses,
+		});
+	} catch (err) {
+		res.status(500).send({
+			message: err.message,
+		});
+	}
+});
 module.exports = router;

@@ -41,6 +41,8 @@ contract ImmoToken {
     //Delegated transfer
         //Approve 
     function approve(address _spender, uint256 _value) public returns (bool success){
+        //require sender has enough tokens to allow
+        require(_value <= balanceOf[msg.sender]);
         // allowance
         allowance[msg.sender][_spender] = _value;
         //Approve event
