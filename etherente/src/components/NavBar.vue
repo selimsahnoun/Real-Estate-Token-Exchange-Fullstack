@@ -7,17 +7,17 @@
 			<ul id="homepage-navlinks">
 				<li>
 					<router-link :to="{ name: 'Marketplace' }" :class="'navlinks'"
-						>Marketplace</router-link
+						>RE Marketplace</router-link
 					>
 				</li>
 				<li>
-					<router-link :to="{ name: 'TokenBuyers' }" :class="'navlinks'"
-						>About Tokens</router-link
+					<router-link :to="{ name: 'TokenSell' }" :class="'navlinks'"
+						>Sell Tokens</router-link
 					>
 				</li>
 				<li>
-					<router-link :to="{ name: 'Marketplace' }" :class="'navlinks'"
-						>Contact</router-link
+					<router-link :to="{ name: 'TokenMarket' }" :class="'navlinks'"
+						>Tokens for sale</router-link
 					>
 				</li>
 				<li>
@@ -65,37 +65,5 @@ export default {
 
 <style lang="scss" scoped>
 @import '../assets/styles/main.scss';
-#homepage-navbar {
-	width: 40%;
-}
-#homepage-navlinks {
-	display: -webkit-flex;
-	display: -moz-flex;
-	display: -ms-flex;
-	display: -o-flex;
-	display: flex;
-	justify-content: space-between;
-	align-items: stretch;
-	list-style: none;
-	margin: 2vh auto 0 auto;
-}
-
-.navlinks {
-	cursor: pointer;
-	transition: all 0.3s ease 0s;
-	color: #578688;
-}
-.navlinks:visited {
-	color: #578688;
-}
-.navlinks:hover {
-	color: white;
-
-	&::after {
-		content: ' ';
-		border-bottom: 5px solid #578688;
-		border-radius: 10px;
-		display: block;
-	}
-}
+@import '../assets/styles/components/_navbar.scss';
 </style>

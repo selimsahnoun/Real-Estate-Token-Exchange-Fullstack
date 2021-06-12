@@ -2,7 +2,9 @@ var ImmoTokenSale = artifacts.require('./ImmoTokenSale.sol');
 var ImmoToken = artifacts.require('./ImmoToken.sol');
 const tokenSupply = 100000;
 const tokenPrice = 100000000000000; //in wei = 0.0001 Eth
-const numberOfTokensSold = 10;
+const numberOfTokensSold = 100;
+const numberOfTokensToSell = 50;
+const sellPrice = 200000000000000; //in wei = 0.0002 Eth
 const fees = numberOfTokensSold * tokenPrice;
 const tokensForSale = 0.8 * tokenSupply; //80% of the tokens for the sale contract
 var tokenSaleInstance, buyer, admin;
@@ -106,6 +108,37 @@ contract('ImmoTokenSale', function (accounts) {
 					'cannot trade more than available'
 				);
 			});
+	});
+	it('stores an offer of tokens selling', async function () {
+		const ImmoTokenInstance = await ImmoToken.deployed();
+		return ImmoTokenSale.deployed()
+			.then(async function (instance) {
+				tokenSaleInstance = instance;
+				const saleTokenTransfer = await ImmoTokenInstance.transfer(
+					tokenSaleInstance.address,
+					tokensForSale,
+					{ from: admin }
+				);
+				await tokenSaleInstance.buyTokens(numberOfTokensSold, {
+					from: buyer,
+					value: fees,
+				});
+				const buyerBalance = await ImmoTokenInstance.balanceOf(buyer);
+				console.log(buyerBalance);
+				return tokenSaleInstance.bookOffer(numberOfTokensToSell, sellPrice, {
+					from: buyer,
+				});
+			})
+			.then(function (receipt) {
+				console.log(receipt);
+			});
+		// .then(assert.fail)
+		// .catch(function (error) {
+		// 	assert(
+		// 		error.message.indexOf('revert') >= 0,
+		// 		'cant store if you havent bought tokens'
+		// 	);
+		// });
 	});
 	it('ends token buying', async function () {
 		const ImmoTokenInstance = await ImmoToken.deployed();

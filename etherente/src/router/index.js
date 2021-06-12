@@ -5,8 +5,9 @@ import HousePage from '../views/HousePage.vue';
 import RegisterUser from '../views/RegisterUser.vue';
 import LoginUser from '../views/LoginUser.vue';
 import UserBoard from '../views/UserBoard.vue';
-import TokenBuyers from '../views/TokenBuyers.vue';
+import TokenSell from '../views/TokenSell.vue';
 import AdminBoard from '../views/AdminBoard.vue';
+import TokenMarket from '../views/TokenMarket.vue';
 const routes = [
 	{
 		path: '/',
@@ -42,9 +43,14 @@ const routes = [
 		component: LoginUser,
 	},
 	{
-		path: '/token/buyers',
-		name: 'TokenBuyers',
-		component: TokenBuyers,
+		path: '/token/sell',
+		name: 'TokenSell',
+		component: TokenSell,
+	},
+	{
+		path: '/token/market',
+		name: 'TokenMarket',
+		component: TokenMarket,
 	},
 	{
 		path: '/user/adminboard',

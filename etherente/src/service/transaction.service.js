@@ -16,3 +16,19 @@ export const fetchAllAddresses = () => {
 		.then((response) => response.data.allAddresses)
 		.catch((err) => console.log(err.response.data.errors));
 };
+export const addSellOffer = (seller, amount, price) => {
+	return axios
+		.post(`http://localhost:8081/transaction/addselloffer`, {
+			seller,
+			amount,
+			price,
+		})
+		.then((response) => response)
+		.catch((err) => console.log(err.response.data.errors));
+};
+export const fetchAllOffers = () => {
+	return axios
+		.get(`http://localhost:8081/transaction/fetchalloffers`)
+		.then((response) => response.data.allOffers)
+		.catch((err) => console.log(err.response.data.errors));
+};

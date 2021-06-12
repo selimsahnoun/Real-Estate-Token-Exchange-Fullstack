@@ -58,9 +58,8 @@ export default {
 	},
 	methods: {
 		async sendTokensFromERC20() {
-			const transferStatus = await this.web3.erc20Contract.methods
-				.transfer(this.web3.saleContract.options.address, this.tokensToTransfer)
-				.send({ from: this.web3.accounts[0] });
+			this.$store.dispatch('transferTokens', { tokens: this.tokensToTransfer });
+
 			location.reload();
 		},
 		progressBarWidth() {

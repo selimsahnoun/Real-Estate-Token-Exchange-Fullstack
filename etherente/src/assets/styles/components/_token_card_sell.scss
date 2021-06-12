@@ -1,0 +1,240 @@
+.sell-token {
+	padding-top: 20px;
+	margin: 50px auto;
+	width: 550px;
+	height: 450px;
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+	flex-direction: column;
+	border-radius: 18px;
+	background: white;
+	box-shadow: 5px 5px 15px var(--box_shadow_color);
+	text-align: center;
+}
+.progress-container {
+	position: relative;
+}
+.progress-title {
+	position: absolute;
+	bottom: 2.7em;
+	left: 0.5em;
+	color: var(--themeColor);
+	font-weight: 800;
+	font-size: 20px;
+}
+.progress-bar {
+	position: relative;
+	width: 500px;
+	height: 3em;
+	color: var(--themeColor);
+	border-radius: 1.5em;
+	background-color: white;
+	box-shadow: 5px 5px 15px rgba($color: var(--themeColor), $alpha: 0.4);
+}
+
+.progress-bar::before {
+	content: attr(data-label);
+	color: var(--themeColor);
+	display: flex;
+	align-items: center;
+	position: absolute;
+	left: 0.5em;
+	top: 0.5em;
+	bottom: 0.5em;
+	width: calc(var(--token-bar-width, 0) * 1%);
+	min-width: 2em;
+	max-width: calc(100% - 1em);
+	background-color: var(--secondThemeColor);
+	border-radius: 1em;
+	padding: 1em;
+}
+
+.buy-token-input-container {
+	background: white;
+	position: relative;
+	width: 500px;
+	height: 50px;
+	border-radius: 40px;
+	border: 2px solid var(--box_shadow_color);
+	transition: 0.5s;
+	&:hover {
+		width: 520px;
+		border: 2px solid var(--themeColor);
+		.next {
+			opacity: 1;
+			right: 20px;
+		}
+		.previous {
+			opacity: 1;
+			left: 20px;
+		}
+	}
+	.next {
+		position: absolute;
+		top: 50%;
+		right: 30px;
+		display: block;
+		width: 20px;
+		height: 20px;
+		border-top: 2px solid var(--themeColor);
+		border-left: 2px solid var(--themeColor);
+		z-index: 1;
+		transform: translateY(-50%) rotate(135deg);
+		cursor: pointer;
+		opacity: 0;
+		transition: 0.5s;
+	}
+	.previous {
+		position: absolute;
+		top: 50%;
+		left: 30px;
+		display: block;
+		width: 20px;
+		height: 20px;
+		border-top: 2px solid var(--themeColor);
+		border-left: 2px solid var(--themeColor);
+		z-index: 1;
+		transform: translateY(-50%) rotate(-45deg);
+		cursor: pointer;
+		opacity: 0;
+		transition: 0.5s;
+	}
+}
+.buy-token-input-container::before {
+	content: 'Select number of tokens you want to buy';
+	position: absolute;
+	bottom: 2.7em;
+	left: 0.5em;
+	color: var(--themeColor);
+	font-weight: 800;
+	font-size: 20px;
+}
+.number-tokens input {
+	outline: none;
+	padding: 0;
+	z-index: 1;
+	border: none;
+	position: absolute;
+	display: block;
+	max-width: 250px;
+	left: 0;
+	right: 0;
+	margin-left: auto;
+	margin-right: auto;
+	height: 100%;
+	text-align: center;
+	line-height: 46px;
+	color: var(--themeColor);
+	font-size: 24px;
+}
+/* Chrome, Safari, Edge, Opera */
+.number-tokens input::-webkit-outer-spin-button,
+.number-tokens input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+/* Firefox */
+.number-tokens input[type='number'] {
+	-moz-appearance: textfield;
+}
+.price-container {
+	width: 480px;
+	display: flex;
+	align-content: center;
+	justify-content: space-between;
+	color: var(--themeColor);
+	font-weight: 800;
+	font-size: 20px;
+
+	.price-value {
+		background: rgba($color: #578688, $alpha: 0.9);
+		padding: 10px 30px;
+		border-radius: 5px;
+		color: white;
+		text-transform: uppercase;
+	}
+	.price-unit-value {
+		border-color: rgba($color: #578688, $alpha: 0.9);
+		border: 1px solid;
+		padding: 10px 30px;
+		border-radius: 5px;
+		color: var(--themeColor);
+		text-transform: uppercase;
+	}
+	.price-title {
+		padding: 10px 30px;
+	}
+}
+.validate-purchase {
+	height: 40px;
+	cursor: pointer;
+	background-color: var(--thirdThemeColor);
+	padding: 10px 120px;
+	border-radius: 20px;
+	color: var(--themeColor);
+	text-transform: uppercase;
+}
+.sell-token-price-input-container {
+	height: 40px;
+	width: 80%;
+	position: relative;
+
+	input {
+		height: 100%;
+		width: 100%;
+		border: none;
+		border-bottom: 2px solid var(--themeColor);
+		font-size: 18px;
+		color: var(--themeColor);
+	}
+	label {
+		position: absolute;
+		bottom: 10px;
+		left: 0px;
+		color: var(--box_shadow_color);
+		pointer-events: none;
+		transition: all 0.3s ease;
+	}
+	input:focus,
+	textarea:focus,
+	select:focus {
+		outline: none;
+	}
+	input:focus ~ label,
+	input:valid ~ label {
+		transform: translateY(-25px);
+	}
+	.underline {
+		position: absolute;
+		bottom: 0px;
+		height: 2px;
+		width: 100%;
+	}
+	.underline:before {
+		position: absolute;
+		content: '';
+		left: 0px;
+		height: 100%;
+		width: 100%;
+		background: var(--thirdThemeColor);
+		transform: scaleX(0);
+		transition: transform 0.3s ease;
+	}
+	input:focus ~ .underline:before,
+	input:valid ~ .underline:before {
+		transform: scaleX(1);
+	}
+	/* Chrome, Safari, Edge, Opera */
+	input::-webkit-outer-spin-button,
+	input::-webkit-inner-spin-button {
+		-webkit-appearance: none;
+		margin: 0;
+	}
+
+	/* Firefox */
+	input[type='number'] {
+		-moz-appearance: textfield;
+	}
+}

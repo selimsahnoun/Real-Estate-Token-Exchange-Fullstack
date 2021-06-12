@@ -7,18 +7,13 @@ export const state = {
 	erc20Contract: null,
 };
 export const mutations = {
-	SET_WEB_3(state, payload) {
-		state.web3 = payload;
+	SET_ALL_STATE(state, payload) {
+		state.web3 = payload.web3;
+		state.accounts = payload.accounts;
+		state.saleContract = payload.ImmoTokenSaleInstance;
+		state.erc20Contract = payload.ImmoTokenInstance;
 	},
-	SET_ACCOUNTS(state, payload) {
-		state.accounts = payload;
-	},
-	SET_SALE_CONTRACT(state, payload) {
-		state.saleContract = payload;
-	},
-	SET_ERC20_CONTRACT(state, payload) {
-		state.erc20Contract = payload;
-	},
+
 	SET_TOTAL_TOKENS(state, payload) {
 		state.totalTokens = payload;
 	},
@@ -35,22 +30,64 @@ export const mutations = {
 				);
 			});
 	},
+	//transfer tokens from erc20 to sale contract
+	async TRANSFER_TOKENS(state, payload) {
+		await state.erc20Contract.methods
+			.transfer(state.saleContract.options.address, payload.tokens)
+			.send({ from: state.accounts[0] })
+			.then((response) => {
+				// send details to database
+				transactionService.addTransaction(
+					response.events.Transfer.returnValues._from,
+					response.events.Transfer.returnValues._to,
+					response.events.Transfer.returnValues._value
+				);
+			});
+	},
+	async SELL_TOKENS(state, payload) {
+		await state.saleContract.methods
+			.bookOffer(payload.tokens, payload.price)
+			.send({ from: state.accounts[0] })
+			.then((response) => {
+				// // send details to database
+				transactionService.addSellOffer(
+					response.events.SellOffer.returnValues._seller,
+					response.events.SellOffer.returnValues._amount,
+					response.events.SellOffer.returnValues._price
+				);
+			});
+	},
+	//transfer tokens from client to client
+	async BUY_OFFER_TOKENS(state, payload) {
+		await state.saleContract.methods
+			.buyOffer(payload.seller, payload.amount, payload.index)
+			.send({ from: state.accounts[0], value: payload.price })
+			.then((response) => {
+				console.log(response);
+				// // // send details to database
+				// transactionService.addSellOffer(
+				// 	response.events.SellOffer.returnValues._seller,
+				// 	response.events.SellOffer.returnValues._amount,
+				// 	response.events.SellOffer.returnValues._price
+				// );
+			});
+	},
 };
 export const actions = {
-	setWeb3(context, event) {
-		context.commit('SET_WEB_3', event);
+	setAllState(context, web3) {
+		context.commit('SET_ALL_STATE', web3);
 	},
-	setAccounts(context, event) {
-		context.commit('SET_ACCOUNTS', event);
+	buyTokens(context, payload) {
+		context.commit('BUY_TOKENS', payload);
 	},
-	setSaleContract(context, event) {
-		context.commit('SET_SALE_CONTRACT', event);
+	transferTokens(context, payload) {
+		context.commit('TRANSFER_TOKENS', payload);
 	},
-	setErc20Contract(context, event) {
-		context.commit('SET_ERC20_CONTRACT', event);
+	sellTokens(context, payload) {
+		context.commit('SELL_TOKENS', payload);
 	},
-	buyTokens(context, event) {
-		context.commit('BUY_TOKENS', event);
+	buyOfferTokens(context, payload) {
+		context.commit('BUY_OFFER_TOKENS', payload);
 	},
 };
 export const getters = {
@@ -60,11 +97,11 @@ export const getters = {
 			.call({ from: state.saleContract.options.address })
 			.then((totalSupply) => totalSupply);
 	},
-	getRemainingTokensInERC20: async (state) => {
+	getRemainingTokensInERC20: (state) => {
 		return state.erc20Contract.methods
-			.remainingSupply()
+			.balanceOf(process.env.VUE_APP_OWNER_ADDRESS)
 			.call({ from: state.saleContract.options.address })
-			.then((remainingSupply) => remainingSupply);
+			.then((balance) => balance);
 	},
 	getTokensLeftForSale: async (state) => {
 		return state.erc20Contract.methods
@@ -75,6 +112,12 @@ export const getters = {
 	getBalance: (state) => (address) => {
 		return state.erc20Contract.methods
 			.balanceOf(address)
+			.call({ from: state.saleContract.options.address })
+			.then((balance) => balance);
+	},
+	getOffer: (state) => (address, index) => {
+		return state.saleContract.methods
+			.offerBooking(address, index)
 			.call({ from: state.saleContract.options.address })
 			.then((balance) => balance);
 	},

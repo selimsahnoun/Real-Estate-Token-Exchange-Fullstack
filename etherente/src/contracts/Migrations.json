@@ -870,12 +870,12 @@
     "5776": {
       "events": {},
       "links": {},
-      "address": "0xcA3d3e13aa9950cdaaa420dce4De3C4Da0a664E1",
-      "transactionHash": "0x95ada8fa50d2d2dbdaa4bcc1cf3c074ff53ea495fc2da057d2cc131b317e9bc3"
+      "address": "0xc4331FdE81fEE5769Bcb5e3e0fFAa6321aB21de0",
+      "transactionHash": "0x8fea1a192b360b498ba888f5998bdafefbf8e8448ce951dae904f7ead2011826"
     }
   },
   "schemaVersion": "3.1.0",
-  "updatedAt": "2021-06-01T13:59:46.057Z",
+  "updatedAt": "2021-06-09T15:29:54.024Z",
   "networkType": "ethereum",
   "devdoc": {
     "methods": {}
