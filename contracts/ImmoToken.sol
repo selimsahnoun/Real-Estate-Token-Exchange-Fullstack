@@ -62,6 +62,16 @@ contract ImmoToken {
         //return a boolean
         return true;
     } 
- 
+ function offerTransfer(address _from, address _to, uint256 _value) public returns (bool success){
+        //require _from has enough tokens
+        require(_value <= balanceOf[_from]);
+        //change the balance
+        balanceOf[_from] -= _value;
+        balanceOf[_to] += _value;
+        //transfer event
+        emit Transfer(_from, _to, _value);
+        //return a boolean
+        return true;
+    } 
   
 } 

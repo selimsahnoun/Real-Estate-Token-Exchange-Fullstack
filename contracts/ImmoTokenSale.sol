@@ -20,11 +20,11 @@ contract ImmoTokenSale {
         uint256 _amount,
         uint256 _price
    );
-    event Transfer(
-        address _from, 
-        address _to, 
-        uint256 _numberOfTokens
-    );
+    // event Transfer(
+    //     address _from, 
+    //     address _to, 
+    //     uint256 _numberOfTokens
+    // );
     mapping(address => Offer[]) public offerBooking;
 
     constructor(ImmoToken _tokenContract, uint256 _tokenPrice) public{
@@ -71,11 +71,10 @@ contract ImmoTokenSale {
         //require that the value is equal to tokens 
         require(msg.value == mul(_numberOfTokens , offerBooking[_seller][_index].price));
         // transfer to the buyer from the seller
-        tokenContract.balanceOf(_seller) -= _numberOfTokens;
+        require(tokenContract.offerTransfer(_seller, msg.sender, _numberOfTokens));
         offerBooking[_seller][_index].amount-= _numberOfTokens;
-        tokenContract.balanceOf(msg.sender) += _numberOfTokens;
         //transfer event
-        emit Transfer(_seller, msg.sender, _numberOfTokens);
+        //emit Transfer(_seller, msg.sender, _numberOfTokens);
         return true;
     }
     //Ending Token Sale

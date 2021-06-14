@@ -44,6 +44,7 @@ export default {
 					);
 					//we iterate through a call to the smart contract by index
 					for (let j = 0; j < numberOfOffers; j++) {
+						console.log(offers[i].seller);
 						const offer = await this.getOffer(offers[i].seller, j);
 						const priceInWei = offer.price.toString();
 						//we push it to the list of offers
