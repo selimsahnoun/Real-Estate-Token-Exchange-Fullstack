@@ -15,7 +15,7 @@ export const clearAuthorization = () => {
 export const login = (credentials) => {
 	return axios
 		.post('//localhost:8081/user/login', credentials)
-		.then((token) => token)
+		.then((data) => data)
 		.catch((err) => err.response);
 };
 export const checkToken = (callback) => {
@@ -37,7 +37,7 @@ export const checkToken = (callback) => {
 export const verifySession = (userData) => {
 	return axios
 		.post('//localhost:8081/user/tokenverification', userData)
-		.then((token) => token)
+		.then((data) => data)
 		.catch((err) => err.response);
 };
 

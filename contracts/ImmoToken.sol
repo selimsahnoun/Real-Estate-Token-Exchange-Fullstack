@@ -5,6 +5,7 @@ contract ImmoToken {
     string public symbol = "Stone";
     string public version = "Immo Token v1.0";
     uint256 public totalSupply;
+    address public saleContract;
     
     event Transfer(
         address indexed _from, 
@@ -22,8 +23,13 @@ contract ImmoToken {
     
     constructor(uint256 _initialSupply) public  {
         balanceOf[msg.sender] = _initialSupply;
-        totalSupply = _initialSupply;
-          
+        totalSupply = _initialSupply;   
+    }
+
+    function allowContract(address _contract) public returns (bool success){
+        require(saleContract == address(0));
+        saleContract = _contract;
+        return true;
     }
     function transfer(address _to, uint256 _value) public returns (bool success) {
         // revert if sender credit is not enough
@@ -63,6 +69,8 @@ contract ImmoToken {
         return true;
     } 
  function offerTransfer(address _from, address _to, uint256 _value) public returns (bool success){
+        //msg.sender needs to be the allowed saleContract
+        require(msg.sender == saleContract);
         //require _from has enough tokens
         require(_value <= balanceOf[_from]);
         //change the balance

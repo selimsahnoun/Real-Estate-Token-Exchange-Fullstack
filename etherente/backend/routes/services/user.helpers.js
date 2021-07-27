@@ -50,17 +50,34 @@ exports.hashAndSendtoDB = async (user) => {
 		first_name: user.first_name,
 		last_name: user.last_name,
 		email: user.email,
-		ip_address: user.ip_address,
+		contract_address: user.contract_address,
 		hashed_password: hashPass,
 		salt: salt,
 		admin: false,
 	});
-	return addedUser;
+
+	return {
+		first_name: addedUser.first_name,
+		last_name: addedUser.last_name,
+		email: addedUser.email,
+		contract_address: addedUser.contract_address,
+		admin: addedUser.admin,
+	};
 };
 exports.signToken = (user) => {
-	const token = jwt.sign({ user }, process.env.JWT_SECRET, {
-		expiresIn: process.env.JWT_EXPIRES_IN,
-	});
+	const token = jwt.sign(
+		{
+			first_name: user.first_name,
+			last_name: user.last_name,
+			email: user.email,
+			contract_address: user.contract_address,
+			admin: user.admin,
+		},
+		process.env.JWT_SECRET,
+		{
+			expiresIn: process.env.JWT_EXPIRES_IN,
+		}
+	);
 	return token;
 };
 exports.checkLoginCredentials = async (email, password) => {
@@ -68,7 +85,13 @@ exports.checkLoginCredentials = async (email, password) => {
 	if (dbUser.length === 1) {
 		const hashPass = await bcrypt.hash(password, dbUser[0].salt);
 		if (hashPass === dbUser[0].hashed_password) {
-			return dbUser[0];
+			return {
+				first_name: dbUser[0].first_name,
+				last_name: dbUser[0].last_name,
+				email: dbUser[0].email,
+				contract_address: dbUser[0].contract_address,
+				admin: dbUser[0].admin,
+			};
 		} else {
 			return { error: 'Invalid password' };
 		}
@@ -78,8 +101,9 @@ exports.checkLoginCredentials = async (email, password) => {
 };
 exports.checkEmailExist = async (email) => {
 	const dbUser = await userControllers.findEmail(email);
-	if (dbUser.email === email) {
-		return dbUser;
+
+	if (dbUser[0].email === email) {
+		return dbUser[0];
 	} else {
 		return false;
 	}

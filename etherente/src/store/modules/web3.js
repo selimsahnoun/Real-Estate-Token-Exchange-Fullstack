@@ -74,8 +74,8 @@ export const mutations = {
 	},
 };
 export const actions = {
-	setAllState(context, web3) {
-		context.commit('SET_ALL_STATE', web3);
+	setAllState(context, payload) {
+		context.commit('SET_ALL_STATE', payload);
 	},
 	buyTokens(context, payload) {
 		context.commit('BUY_TOKENS', payload);

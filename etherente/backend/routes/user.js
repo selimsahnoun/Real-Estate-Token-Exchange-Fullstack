@@ -29,7 +29,7 @@ router.post('/register', async (req, res) => {
 				first_name: req.body.first_name,
 				last_name: req.body.last_name,
 				email: req.body.email,
-				ip_address: req.body.ip_address,
+				contract_address: req.body.contract_address,
 				password: req.body.password,
 				admin: false,
 			};
@@ -87,6 +87,7 @@ router.post('/login', async (req, res) => {
 				req.body.password
 			);
 			userProfile.error ? errorsToSend.push(userProfile.error) : '';
+			//send status 400 in case there is an error
 			if (errorsToSend.length > 0) {
 				res.status(400).json({
 					errors: errorsToSend,
@@ -97,8 +98,11 @@ router.post('/login', async (req, res) => {
 
 			res.status(200).json({
 				token,
-				email: userProfile.email,
 				first_name: userProfile.first_name,
+				last_name: userProfile.last_name,
+				email: userProfile.email,
+				contract_address: userProfile.contract_address,
+				admin: userProfile.admin,
 			});
 		} else {
 			errorsToSend.push('An error occured, please try again');
@@ -118,14 +122,21 @@ router.post('/tokenverification', async (req, res) => {
 	var errorsToSend = [];
 	try {
 		if (jwt.decode(req.body.token)) {
+			//decode the existing token
 			const decodedUserInfo = jwt.decode(req.body.token);
+			//check if the email exists in the database
 			const userFound = await checkEmailExist(decodedUserInfo.email);
 			if (userFound) {
-				const token = jwt.sign({ userFound }, process.env.JWT_SECRET, {
-					expiresIn: process.env.JWT_EXPIRES_IN,
-				});
+				//sign token
+				const token = signToken(userFound);
+				//console.log(userFound);
 				res.status(200).json({
 					token,
+					first_name: userFound.first_name,
+					last_name: userFound.last_name,
+					email: userFound.email,
+					contract_address: userFound.contract_address,
+					admin: userFound.admin,
 				});
 			} else {
 				errorsToSend.push('Invalid Token');
@@ -152,7 +163,7 @@ router.post('/adduser', (req, res) => {
 			first_name: req.body.first_name,
 			last_name: req.body.last_name,
 			email: req.body.email,
-			ip_address: req.body.ip_address,
+			contract_address: req.body.contract_address,
 			salt: req.body.salt,
 		};
 		userControllers

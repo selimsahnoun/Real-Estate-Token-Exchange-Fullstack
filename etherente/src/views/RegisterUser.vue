@@ -28,6 +28,10 @@
 				placeholder="Confirm Password"
 			/>
 		</div>
+		<div class="user-address">
+			<div class="label">Your contract address</div>
+			<div class="contract">{{ userContract }}</div>
+		</div>
 		<div class="register-button" @click="register">register</div>
 		<div v-if="listOfErrors" class="errors-container">
 			<li v-for="error in listOfErrors">{{ error }}</li>
@@ -36,6 +40,7 @@
 </template>
 
 <script>
+import contractInstance from '../getWeb3Instance';
 import { mapState } from 'vuex';
 export default {
 	name: 'RegisterUser',
@@ -48,11 +53,23 @@ export default {
 			password: '',
 			confirmPassword: '',
 			listOfErrors: null,
+			userContract: null,
 		};
+	},
+	async mounted() {
+		try {
+			const state = await contractInstance();
+			this.userContract = state.accounts[0];
+		} catch (error) {
+			// Catch any errors for any of the above operations.
+			alert(
+				`Failed to load web3, accounts, or contract. Check console for details.`
+			);
+			console.error(error);
+		}
 	},
 	methods: {
 		async register() {
-			const ip_address = await this.$store.dispatch('getIpAddress');
 			if (this.password === this.confirmPassword) {
 				this.$store
 					.dispatch('register', {
@@ -60,7 +77,7 @@ export default {
 						last_name: this.last_name,
 						email: this.email,
 						password: this.password,
-						ip_address: ip_address,
+						contract_address: this.userContract,
 					})
 					.then(() => {
 						if (this.user.registerErrors) {

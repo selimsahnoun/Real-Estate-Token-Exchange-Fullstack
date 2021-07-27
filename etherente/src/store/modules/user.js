@@ -6,8 +6,8 @@ export const mutations = {
 		state.errors = null;
 		state.user = userData;
 		localStorage.setItem('user', JSON.stringify(userData));
-		userService.clearAuthorization();
-		userService.authorization(userData);
+		// userService.clearAuthorization();
+		// userService.authorization(userData);
 	},
 	CLEAR_USER_DATA() {
 		localStorage.removeItem('user');
@@ -59,5 +59,8 @@ export const actions = {
 export const getters = {
 	loggedIn(state) {
 		return !!state.user;
+	},
+	admin(state) {
+		return state.user.admin;
 	},
 };

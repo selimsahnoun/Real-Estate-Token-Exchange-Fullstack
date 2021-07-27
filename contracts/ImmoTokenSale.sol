@@ -20,11 +20,7 @@ contract ImmoTokenSale {
         uint256 _amount,
         uint256 _price
    );
-    // event Transfer(
-    //     address _from, 
-    //     address _to, 
-    //     uint256 _numberOfTokens
-    // );
+
     mapping(address => Offer[]) public offerBooking;
 
     constructor(ImmoToken _tokenContract, uint256 _tokenPrice) public{

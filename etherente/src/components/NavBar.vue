@@ -11,7 +11,10 @@
 					>
 				</li>
 				<li>
-					<router-link :to="{ name: 'TokenSell' }" :class="'navlinks'"
+					<router-link
+						v-if="loggedIn"
+						:to="{ name: 'TokenSell' }"
+						:class="'navlinks'"
 						>Sell Tokens</router-link
 					>
 				</li>
@@ -20,9 +23,15 @@
 						>Tokens for sale</router-link
 					>
 				</li>
-				<li>
-					<router-link :to="{ name: 'AdminBoard' }" :class="'navlinks'"
+				<li v-if="loggedIn">
+					<router-link
+						v-if="admin"
+						:to="{ name: 'AdminBoard' }"
+						:class="'navlinks'"
 						>Admin Board</router-link
+					>
+					<router-link v-else :to="{ name: 'UserBoard' }" :class="'navlinks'"
+						>User Board</router-link
 					>
 				</li>
 			</ul>
@@ -48,12 +57,8 @@
 import { mapGetters } from 'vuex';
 export default {
 	name: 'NavBar',
-	computed: { ...mapGetters(['loggedIn']) },
-	setup() {
-		// function logout() {
-		// }
-		// return { logout };
-	},
+	computed: { ...mapGetters(['loggedIn', 'admin']) },
+	setup() {},
 	methods: {
 		logout() {
 			this.$store.dispatch('logout');
