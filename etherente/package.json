@@ -15,6 +15,7 @@
 		"bcryptjs": "^2.4.3",
 		"core-js": "^3.6.5",
 		"dotenv": "^8.2.0",
+		"ethers": "^5.4.3",
 		"fs": "0.0.1-security",
 		"jsonwebtoken": "^8.5.1",
 		"mongodb": "^3.6.6",

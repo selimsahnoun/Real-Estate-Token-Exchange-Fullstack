@@ -167,6 +167,18 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var rege
 
 /***/ }),
 
+/***/ "./node_modules/cache-loader/dist/cjs.js?!./node_modules/babel-loader/lib/index.js!./node_modules/cache-loader/dist/cjs.js?!./node_modules/vue-loader-v16/dist/index.js?!./src/components/AdminBoard/SendRent.vue?vue&type=script&lang=js":
+/*!**********************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader-v16/dist??ref--0-1!./src/components/AdminBoard/SendRent.vue?vue&type=script&lang=js ***!
+  \**********************************************************************************************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var regenerator_runtime_runtime_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! regenerator-runtime/runtime.js */ \"./node_modules/regenerator-runtime/runtime.js\");\n/* harmony import */ var regenerator_runtime_runtime_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(regenerator_runtime_runtime_js__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _Users_selim_Documents_8_Coding_2_Projects_1_Etherente_Real_Estate_Token_Exchange_Fullstack_etherente_node_modules_babel_runtime_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator */ \"./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js\");\n/* harmony import */ var _Users_selim_Documents_8_Coding_2_Projects_1_Etherente_Real_Estate_Token_Exchange_Fullstack_etherente_node_modules_babel_runtime_helpers_esm_objectSpread2__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/objectSpread2 */ \"./node_modules/@babel/runtime/helpers/esm/objectSpread2.js\");\n/* harmony import */ var _paimentHelpers_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./../../paimentHelpers.js */ \"./src/paimentHelpers.js\");\n/* harmony import */ var vuex__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! vuex */ \"./node_modules/vuex/dist/vuex.esm-browser.js\");\n\n\n\n\n\n/* harmony default export */ __webpack_exports__[\"default\"] = ({\n  name: 'SendRent',\n  computed: Object(_Users_selim_Documents_8_Coding_2_Projects_1_Etherente_Real_Estate_Token_Exchange_Fullstack_etherente_node_modules_babel_runtime_helpers_esm_objectSpread2__WEBPACK_IMPORTED_MODULE_2__[\"default\"])({}, Object(vuex__WEBPACK_IMPORTED_MODULE_4__[\"mapState\"])(['web3'])),\n  data: function data() {\n    return {\n      messageToSign: null\n    };\n  },\n  mounted: function mounted() {\n    var _this = this;\n\n    return Object(_Users_selim_Documents_8_Coding_2_Projects_1_Etherente_Real_Estate_Token_Exchange_Fullstack_etherente_node_modules_babel_runtime_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1__[\"default\"])( /*#__PURE__*/regeneratorRuntime.mark(function _callee() {\n      var hash;\n      return regeneratorRuntime.wrap(function _callee$(_context) {\n        while (1) {\n          switch (_context.prev = _context.next) {\n            case 0:\n              try {\n                /// Hashing first makes things easier\n                hash = _paimentHelpers_js__WEBPACK_IMPORTED_MODULE_3__[\"hashPayment\"]('0x7dC1E9bb0D4cC9D013c347f8Df427Dbf4c3377C9', 1, 1457, contractAddress);\n\n                _this.web3.web3.eth.personal.sign(hash, _this.web3.accounts[0], function () {\n                  console.log('Signed');\n                });\n              } catch (error) {\n                // Catch any errors for any of the above operations.\n                alert(\"Send Rent Failed. Check console for details.\");\n                console.error(error);\n              }\n\n            case 1:\n            case \"end\":\n              return _context.stop();\n          }\n        }\n      }, _callee);\n    }))();\n  }\n});\n\n//# sourceURL=webpack:///./src/components/AdminBoard/SendRent.vue?./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader-v16/dist??ref--0-1");
+
+/***/ }),
+
 /***/ "./node_modules/cache-loader/dist/cjs.js?!./node_modules/babel-loader/lib/index.js!./node_modules/cache-loader/dist/cjs.js?!./node_modules/vue-loader-v16/dist/index.js?!./src/components/AdminBoard/SendTokens.vue?vue&type=script&lang=js":
 /*!************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader-v16/dist??ref--0-1!./src/components/AdminBoard/SendTokens.vue?vue&type=script&lang=js ***!
@@ -307,7 +319,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var core
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var regenerator_runtime_runtime_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! regenerator-runtime/runtime.js */ \"./node_modules/regenerator-runtime/runtime.js\");\n/* harmony import */ var regenerator_runtime_runtime_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(regenerator_runtime_runtime_js__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _Users_selim_Documents_8_Coding_2_Projects_1_Etherente_Real_Estate_Token_Exchange_Fullstack_etherente_node_modules_babel_runtime_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator */ \"./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js\");\n/* harmony import */ var _components_AdminBoard_SendTokens_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/AdminBoard/SendTokens.vue */ \"./src/components/AdminBoard/SendTokens.vue\");\n/* harmony import */ var _components_AdminBoard_TransactionList_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/AdminBoard/TransactionList.vue */ \"./src/components/AdminBoard/TransactionList.vue\");\n/* harmony import */ var _getWeb3Instance__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../getWeb3Instance */ \"./src/getWeb3Instance.js\");\n\n\n\n\n\n/* harmony default export */ __webpack_exports__[\"default\"] = ({\n  name: 'AdminBoard',\n  components: {\n    SendTokens: _components_AdminBoard_SendTokens_vue__WEBPACK_IMPORTED_MODULE_2__[\"default\"],\n    TransactionList: _components_AdminBoard_TransactionList_vue__WEBPACK_IMPORTED_MODULE_3__[\"default\"]\n  },\n  data: function data() {\n    return {\n      contractCalled: false,\n      listOfTransactions: null\n    };\n  },\n  mounted: function mounted() {\n    var _this = this;\n\n    return Object(_Users_selim_Documents_8_Coding_2_Projects_1_Etherente_Real_Estate_Token_Exchange_Fullstack_etherente_node_modules_babel_runtime_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1__[\"default\"])( /*#__PURE__*/regeneratorRuntime.mark(function _callee() {\n      var state;\n      return regeneratorRuntime.wrap(function _callee$(_context) {\n        while (1) {\n          switch (_context.prev = _context.next) {\n            case 0:\n              _context.prev = 0;\n              _context.next = 3;\n              return Object(_getWeb3Instance__WEBPACK_IMPORTED_MODULE_4__[\"default\"])();\n\n            case 3:\n              state = _context.sent;\n\n              _this.$store.dispatch('setAllState', state);\n\n              _this.contractCalled = true;\n              _context.next = 12;\n              break;\n\n            case 8:\n              _context.prev = 8;\n              _context.t0 = _context[\"catch\"](0);\n              // Catch any errors for any of the above operations.\n              alert(\"Failed to load web3, accounts, or contract. Check console for details.\");\n              console.error(_context.t0);\n\n            case 12:\n            case \"end\":\n              return _context.stop();\n          }\n        }\n      }, _callee, null, [[0, 8]]);\n    }))();\n  }\n});\n\n//# sourceURL=webpack:///./src/views/AdminBoard.vue?./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader-v16/dist??ref--0-1");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var regenerator_runtime_runtime_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! regenerator-runtime/runtime.js */ \"./node_modules/regenerator-runtime/runtime.js\");\n/* harmony import */ var regenerator_runtime_runtime_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(regenerator_runtime_runtime_js__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _Users_selim_Documents_8_Coding_2_Projects_1_Etherente_Real_Estate_Token_Exchange_Fullstack_etherente_node_modules_babel_runtime_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./node_modules/@babel/runtime/helpers/esm/asyncToGenerator */ \"./node_modules/@babel/runtime/helpers/esm/asyncToGenerator.js\");\n/* harmony import */ var _components_AdminBoard_SendTokens_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/AdminBoard/SendTokens.vue */ \"./src/components/AdminBoard/SendTokens.vue\");\n/* harmony import */ var _components_AdminBoard_TransactionList_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/AdminBoard/TransactionList.vue */ \"./src/components/AdminBoard/TransactionList.vue\");\n/* harmony import */ var _components_AdminBoard_SendRent_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/AdminBoard/SendRent.vue */ \"./src/components/AdminBoard/SendRent.vue\");\n/* harmony import */ var _getWeb3Instance__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../getWeb3Instance */ \"./src/getWeb3Instance.js\");\n\n\n\n\n\n\n/* harmony default export */ __webpack_exports__[\"default\"] = ({\n  name: 'AdminBoard',\n  components: {\n    SendTokens: _components_AdminBoard_SendTokens_vue__WEBPACK_IMPORTED_MODULE_2__[\"default\"],\n    TransactionList: _components_AdminBoard_TransactionList_vue__WEBPACK_IMPORTED_MODULE_3__[\"default\"],\n    SendRent: _components_AdminBoard_SendRent_vue__WEBPACK_IMPORTED_MODULE_4__[\"default\"]\n  },\n  data: function data() {\n    return {\n      contractCalled: false,\n      listOfTransactions: null\n    };\n  },\n  mounted: function mounted() {\n    var _this = this;\n\n    return Object(_Users_selim_Documents_8_Coding_2_Projects_1_Etherente_Real_Estate_Token_Exchange_Fullstack_etherente_node_modules_babel_runtime_helpers_esm_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1__[\"default\"])( /*#__PURE__*/regeneratorRuntime.mark(function _callee() {\n      var state;\n      return regeneratorRuntime.wrap(function _callee$(_context) {\n        while (1) {\n          switch (_context.prev = _context.next) {\n            case 0:\n              _context.prev = 0;\n              _context.next = 3;\n              return Object(_getWeb3Instance__WEBPACK_IMPORTED_MODULE_5__[\"default\"])();\n\n            case 3:\n              state = _context.sent;\n\n              _this.$store.dispatch('setAllState', state);\n\n              _this.contractCalled = true;\n              _context.next = 12;\n              break;\n\n            case 8:\n              _context.prev = 8;\n              _context.t0 = _context[\"catch\"](0);\n              // Catch any errors for any of the above operations.\n              alert(\"Failed to load web3, accounts, or contract. Check console for details.\");\n              console.error(_context.t0);\n\n            case 12:\n            case \"end\":\n              return _context.stop();\n          }\n        }\n      }, _callee, null, [[0, 8]]);\n    }))();\n  }\n});\n\n//# sourceURL=webpack:///./src/views/AdminBoard.vue?./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader-v16/dist??ref--0-1");
 
 /***/ }),
 
@@ -416,6 +428,18 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var rege
 
 "use strict";
 eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"render\", function() { return render; });\n/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ \"./node_modules/vue/dist/vue.runtime.esm-bundler.js\");\n\nvar _hoisted_1 = {\n  \"class\": \"back-image\"\n};\n\nvar _hoisted_2 = /*#__PURE__*/Object(vue__WEBPACK_IMPORTED_MODULE_0__[\"createVNode\"])(\"div\", null, \"Loading ...\", -1\n/* HOISTED */\n);\n\nfunction render(_ctx, _cache, $props, $setup, $data, $options) {\n  var _component_NavBar = Object(vue__WEBPACK_IMPORTED_MODULE_0__[\"resolveComponent\"])(\"NavBar\");\n\n  var _component_router_view = Object(vue__WEBPACK_IMPORTED_MODULE_0__[\"resolveComponent\"])(\"router-view\");\n\n  return Object(vue__WEBPACK_IMPORTED_MODULE_0__[\"openBlock\"])(), Object(vue__WEBPACK_IMPORTED_MODULE_0__[\"createBlock\"])(\"div\", _hoisted_1, [Object(vue__WEBPACK_IMPORTED_MODULE_0__[\"createVNode\"])(_component_NavBar), (Object(vue__WEBPACK_IMPORTED_MODULE_0__[\"openBlock\"])(), Object(vue__WEBPACK_IMPORTED_MODULE_0__[\"createBlock\"])(vue__WEBPACK_IMPORTED_MODULE_0__[\"Suspense\"], null, {\n    \"default\": Object(vue__WEBPACK_IMPORTED_MODULE_0__[\"withCtx\"])(function () {\n      return [Object(vue__WEBPACK_IMPORTED_MODULE_0__[\"createVNode\"])(_component_router_view)];\n    }),\n    fallback: Object(vue__WEBPACK_IMPORTED_MODULE_0__[\"withCtx\"])(function () {\n      return [_hoisted_2];\n    }),\n    _: 1\n    /* STABLE */\n\n  }))]);\n}\n\n//# sourceURL=webpack:///./src/App.vue?./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/vue-loader-v16/dist/templateLoader.js??ref--6!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader-v16/dist??ref--0-1");
+
+/***/ }),
+
+/***/ "./node_modules/cache-loader/dist/cjs.js?!./node_modules/babel-loader/lib/index.js!./node_modules/vue-loader-v16/dist/templateLoader.js?!./node_modules/cache-loader/dist/cjs.js?!./node_modules/vue-loader-v16/dist/index.js?!./src/components/AdminBoard/SendRent.vue?vue&type=template&id=c95b828e":
+/*!*****************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/vue-loader-v16/dist/templateLoader.js??ref--6!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader-v16/dist??ref--0-1!./src/components/AdminBoard/SendRent.vue?vue&type=template&id=c95b828e ***!
+  \*****************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"render\", function() { return render; });\n/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ \"./node_modules/vue/dist/vue.runtime.esm-bundler.js\");\n\nfunction render(_ctx, _cache, $props, $setup, $data, $options) {\n  return Object(vue__WEBPACK_IMPORTED_MODULE_0__[\"openBlock\"])(), Object(vue__WEBPACK_IMPORTED_MODULE_0__[\"createBlock\"])(\"div\", null, [Object(vue__WEBPACK_IMPORTED_MODULE_0__[\"withDirectives\"])(Object(vue__WEBPACK_IMPORTED_MODULE_0__[\"createVNode\"])(\"input\", {\n    type: \"text\",\n    \"onUpdate:modelValue\": _cache[1] || (_cache[1] = function ($event) {\n      return $data.messageToSign = $event;\n    })\n  }, null, 512\n  /* NEED_PATCH */\n  ), [[vue__WEBPACK_IMPORTED_MODULE_0__[\"vModelText\"], $data.messageToSign]])]);\n}\n\n//# sourceURL=webpack:///./src/components/AdminBoard/SendRent.vue?./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/vue-loader-v16/dist/templateLoader.js??ref--6!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader-v16/dist??ref--0-1");
 
 /***/ }),
 
@@ -559,7 +583,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"render\", function() { return render; });\n/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ \"./node_modules/vue/dist/vue.runtime.esm-bundler.js\");\n\n\nvar _withId = /*#__PURE__*/Object(vue__WEBPACK_IMPORTED_MODULE_0__[\"withScopeId\"])(\"data-v-6a65a311\");\n\nObject(vue__WEBPACK_IMPORTED_MODULE_0__[\"pushScopeId\"])(\"data-v-6a65a311\");\n\nvar _hoisted_1 = {\n  key: 0,\n  \"class\": \"admin-container\"\n};\n\nObject(vue__WEBPACK_IMPORTED_MODULE_0__[\"popScopeId\"])();\n\nvar render = /*#__PURE__*/_withId(function (_ctx, _cache, $props, $setup, $data, $options) {\n  var _component_SendTokens = Object(vue__WEBPACK_IMPORTED_MODULE_0__[\"resolveComponent\"])(\"SendTokens\");\n\n  var _component_TransactionList = Object(vue__WEBPACK_IMPORTED_MODULE_0__[\"resolveComponent\"])(\"TransactionList\");\n\n  return $data.contractCalled ? (Object(vue__WEBPACK_IMPORTED_MODULE_0__[\"openBlock\"])(), Object(vue__WEBPACK_IMPORTED_MODULE_0__[\"createBlock\"])(\"div\", _hoisted_1, [Object(vue__WEBPACK_IMPORTED_MODULE_0__[\"createVNode\"])(_component_SendTokens), Object(vue__WEBPACK_IMPORTED_MODULE_0__[\"createVNode\"])(_component_TransactionList)])) : Object(vue__WEBPACK_IMPORTED_MODULE_0__[\"createCommentVNode\"])(\"v-if\", true);\n});\n\n//# sourceURL=webpack:///./src/views/AdminBoard.vue?./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/vue-loader-v16/dist/templateLoader.js??ref--6!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader-v16/dist??ref--0-1");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"render\", function() { return render; });\n/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ \"./node_modules/vue/dist/vue.runtime.esm-bundler.js\");\n\n\nvar _withId = /*#__PURE__*/Object(vue__WEBPACK_IMPORTED_MODULE_0__[\"withScopeId\"])(\"data-v-6a65a311\");\n\nObject(vue__WEBPACK_IMPORTED_MODULE_0__[\"pushScopeId\"])(\"data-v-6a65a311\");\n\nvar _hoisted_1 = {\n  key: 0,\n  \"class\": \"admin-container\"\n};\n\nObject(vue__WEBPACK_IMPORTED_MODULE_0__[\"popScopeId\"])();\n\nvar render = /*#__PURE__*/_withId(function (_ctx, _cache, $props, $setup, $data, $options) {\n  var _component_SendTokens = Object(vue__WEBPACK_IMPORTED_MODULE_0__[\"resolveComponent\"])(\"SendTokens\");\n\n  var _component_TransactionList = Object(vue__WEBPACK_IMPORTED_MODULE_0__[\"resolveComponent\"])(\"TransactionList\");\n\n  var _component_SendRent = Object(vue__WEBPACK_IMPORTED_MODULE_0__[\"resolveComponent\"])(\"SendRent\");\n\n  return $data.contractCalled ? (Object(vue__WEBPACK_IMPORTED_MODULE_0__[\"openBlock\"])(), Object(vue__WEBPACK_IMPORTED_MODULE_0__[\"createBlock\"])(\"div\", _hoisted_1, [Object(vue__WEBPACK_IMPORTED_MODULE_0__[\"createVNode\"])(_component_SendTokens), Object(vue__WEBPACK_IMPORTED_MODULE_0__[\"createVNode\"])(_component_TransactionList), Object(vue__WEBPACK_IMPORTED_MODULE_0__[\"createVNode\"])(_component_SendRent)])) : Object(vue__WEBPACK_IMPORTED_MODULE_0__[\"createCommentVNode\"])(\"v-if\", true);\n});\n\n//# sourceURL=webpack:///./src/views/AdminBoard.vue?./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/babel-loader/lib!./node_modules/vue-loader-v16/dist/templateLoader.js??ref--6!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader-v16/dist??ref--0-1");
 
 /***/ }),
 
@@ -1224,6 +1248,42 @@ eval("module.exports = __webpack_require__.p + \"img/title.6ab716f1.png\";\n\n//
 
 /***/ }),
 
+/***/ "./src/components/AdminBoard/SendRent.vue":
+/*!************************************************!*\
+  !*** ./src/components/AdminBoard/SendRent.vue ***!
+  \************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _SendRent_vue_vue_type_template_id_c95b828e__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./SendRent.vue?vue&type=template&id=c95b828e */ \"./src/components/AdminBoard/SendRent.vue?vue&type=template&id=c95b828e\");\n/* harmony import */ var _SendRent_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./SendRent.vue?vue&type=script&lang=js */ \"./src/components/AdminBoard/SendRent.vue?vue&type=script&lang=js\");\n/* empty/unused harmony star reexport */\n\n\n_SendRent_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__[\"default\"].render = _SendRent_vue_vue_type_template_id_c95b828e__WEBPACK_IMPORTED_MODULE_0__[\"render\"]\n/* hot reload */\nif (false) {}\n\n_SendRent_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__[\"default\"].__file = \"src/components/AdminBoard/SendRent.vue\"\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (_SendRent_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__[\"default\"]);\n\n//# sourceURL=webpack:///./src/components/AdminBoard/SendRent.vue?");
+
+/***/ }),
+
+/***/ "./src/components/AdminBoard/SendRent.vue?vue&type=script&lang=js":
+/*!************************************************************************!*\
+  !*** ./src/components/AdminBoard/SendRent.vue?vue&type=script&lang=js ***!
+  \************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _node_modules_cache_loader_dist_cjs_js_ref_12_0_node_modules_babel_loader_lib_index_js_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_v16_dist_index_js_ref_0_1_SendRent_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/cache-loader/dist/cjs.js??ref--12-0!../../../node_modules/babel-loader/lib!../../../node_modules/cache-loader/dist/cjs.js??ref--0-0!../../../node_modules/vue-loader-v16/dist??ref--0-1!./SendRent.vue?vue&type=script&lang=js */ \"./node_modules/cache-loader/dist/cjs.js?!./node_modules/babel-loader/lib/index.js!./node_modules/cache-loader/dist/cjs.js?!./node_modules/vue-loader-v16/dist/index.js?!./src/components/AdminBoard/SendRent.vue?vue&type=script&lang=js\");\n/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return _node_modules_cache_loader_dist_cjs_js_ref_12_0_node_modules_babel_loader_lib_index_js_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_v16_dist_index_js_ref_0_1_SendRent_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"]; });\n\n/* empty/unused harmony star reexport */ \n\n//# sourceURL=webpack:///./src/components/AdminBoard/SendRent.vue?");
+
+/***/ }),
+
+/***/ "./src/components/AdminBoard/SendRent.vue?vue&type=template&id=c95b828e":
+/*!******************************************************************************!*\
+  !*** ./src/components/AdminBoard/SendRent.vue?vue&type=template&id=c95b828e ***!
+  \******************************************************************************/
+/*! exports provided: render */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _node_modules_cache_loader_dist_cjs_js_ref_12_0_node_modules_babel_loader_lib_index_js_node_modules_vue_loader_v16_dist_templateLoader_js_ref_6_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_v16_dist_index_js_ref_0_1_SendRent_vue_vue_type_template_id_c95b828e__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/cache-loader/dist/cjs.js??ref--12-0!../../../node_modules/babel-loader/lib!../../../node_modules/vue-loader-v16/dist/templateLoader.js??ref--6!../../../node_modules/cache-loader/dist/cjs.js??ref--0-0!../../../node_modules/vue-loader-v16/dist??ref--0-1!./SendRent.vue?vue&type=template&id=c95b828e */ \"./node_modules/cache-loader/dist/cjs.js?!./node_modules/babel-loader/lib/index.js!./node_modules/vue-loader-v16/dist/templateLoader.js?!./node_modules/cache-loader/dist/cjs.js?!./node_modules/vue-loader-v16/dist/index.js?!./src/components/AdminBoard/SendRent.vue?vue&type=template&id=c95b828e\");\n/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, \"render\", function() { return _node_modules_cache_loader_dist_cjs_js_ref_12_0_node_modules_babel_loader_lib_index_js_node_modules_vue_loader_v16_dist_templateLoader_js_ref_6_node_modules_cache_loader_dist_cjs_js_ref_0_0_node_modules_vue_loader_v16_dist_index_js_ref_0_1_SendRent_vue_vue_type_template_id_c95b828e__WEBPACK_IMPORTED_MODULE_0__[\"render\"]; });\n\n\n\n//# sourceURL=webpack:///./src/components/AdminBoard/SendRent.vue?");
+
+/***/ }),
+
 /***/ "./src/components/AdminBoard/SendTokens.vue":
 /*!**************************************************!*\
   !*** ./src/components/AdminBoard/SendTokens.vue ***!
@@ -1795,6 +1855,18 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var core
 
 "use strict";
 eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _Users_selim_Documents_8_Coding_2_Projects_1_Etherente_Real_Estate_Token_Exchange_Fullstack_etherente_node_modules_core_js_modules_es_array_iterator_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/core-js/modules/es.array.iterator.js */ \"./node_modules/core-js/modules/es.array.iterator.js\");\n/* harmony import */ var _Users_selim_Documents_8_Coding_2_Projects_1_Etherente_Real_Estate_Token_Exchange_Fullstack_etherente_node_modules_core_js_modules_es_array_iterator_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_Users_selim_Documents_8_Coding_2_Projects_1_Etherente_Real_Estate_Token_Exchange_Fullstack_etherente_node_modules_core_js_modules_es_array_iterator_js__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _Users_selim_Documents_8_Coding_2_Projects_1_Etherente_Real_Estate_Token_Exchange_Fullstack_etherente_node_modules_core_js_modules_es_promise_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./node_modules/core-js/modules/es.promise.js */ \"./node_modules/core-js/modules/es.promise.js\");\n/* harmony import */ var _Users_selim_Documents_8_Coding_2_Projects_1_Etherente_Real_Estate_Token_Exchange_Fullstack_etherente_node_modules_core_js_modules_es_promise_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_Users_selim_Documents_8_Coding_2_Projects_1_Etherente_Real_Estate_Token_Exchange_Fullstack_etherente_node_modules_core_js_modules_es_promise_js__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _Users_selim_Documents_8_Coding_2_Projects_1_Etherente_Real_Estate_Token_Exchange_Fullstack_etherente_node_modules_core_js_modules_es_object_assign_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/core-js/modules/es.object.assign.js */ \"./node_modules/core-js/modules/es.object.assign.js\");\n/* harmony import */ var _Users_selim_Documents_8_Coding_2_Projects_1_Etherente_Real_Estate_Token_Exchange_Fullstack_etherente_node_modules_core_js_modules_es_object_assign_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_Users_selim_Documents_8_Coding_2_Projects_1_Etherente_Real_Estate_Token_Exchange_Fullstack_etherente_node_modules_core_js_modules_es_object_assign_js__WEBPACK_IMPORTED_MODULE_2__);\n/* harmony import */ var _Users_selim_Documents_8_Coding_2_Projects_1_Etherente_Real_Estate_Token_Exchange_Fullstack_etherente_node_modules_core_js_modules_es_promise_finally_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./node_modules/core-js/modules/es.promise.finally.js */ \"./node_modules/core-js/modules/es.promise.finally.js\");\n/* harmony import */ var _Users_selim_Documents_8_Coding_2_Projects_1_Etherente_Real_Estate_Token_Exchange_Fullstack_etherente_node_modules_core_js_modules_es_promise_finally_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_Users_selim_Documents_8_Coding_2_Projects_1_Etherente_Real_Estate_Token_Exchange_Fullstack_etherente_node_modules_core_js_modules_es_promise_finally_js__WEBPACK_IMPORTED_MODULE_3__);\n/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! vue */ \"./node_modules/vue/dist/vue.runtime.esm-bundler.js\");\n/* harmony import */ var _App_vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./App.vue */ \"./src/App.vue\");\n/* harmony import */ var _registerServiceWorker__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./registerServiceWorker */ \"./src/registerServiceWorker.js\");\n/* harmony import */ var _router__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./router */ \"./src/router/index.js\");\n/* harmony import */ var _store__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./store */ \"./src/store/index.js\");\n\n\n\n\n\n\n\n\n\nObject(vue__WEBPACK_IMPORTED_MODULE_4__[\"createApp\"])(_App_vue__WEBPACK_IMPORTED_MODULE_5__[\"default\"]).use(_store__WEBPACK_IMPORTED_MODULE_8__[\"default\"]).use(_router__WEBPACK_IMPORTED_MODULE_7__[\"default\"]).mount('#app');\n\n//# sourceURL=webpack:///./src/main.js?");
+
+/***/ }),
+
+/***/ "./src/paimentHelpers.js":
+/*!*******************************!*\
+  !*** ./src/paimentHelpers.js ***!
+  \*******************************/
+/*! exports provided: hashPayment */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"hashPayment\", function() { return hashPayment; });\n/* harmony import */ var core_js_modules_es_date_to_string_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! core-js/modules/es.date.to-string.js */ \"./node_modules/core-js/modules/es.date.to-string.js\");\n/* harmony import */ var core_js_modules_es_date_to_string_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_date_to_string_js__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var core_js_modules_es_object_to_string_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! core-js/modules/es.object.to-string.js */ \"./node_modules/core-js/modules/es.object.to-string.js\");\n/* harmony import */ var core_js_modules_es_object_to_string_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_object_to_string_js__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var core_js_modules_es_regexp_to_string_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! core-js/modules/es.regexp.to-string.js */ \"./node_modules/core-js/modules/es.regexp.to-string.js\");\n/* harmony import */ var core_js_modules_es_regexp_to_string_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es_regexp_to_string_js__WEBPACK_IMPORTED_MODULE_2__);\n/* harmony import */ var ethers__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ethers */ \"./node_modules/ethers/lib.esm/index.js\");\n\n\n\n // recipient is the address that should be paid.\n// amount, in wei, specifies how much ether should be sent.\n// nonce can be any unique number to prevent replay attacks\n// contractAddress is used to prevent cross-contract replay attacks\n\nvar hashPayment = function hashPayment(recipient, amount, nonce, contractAddress) {\n  var hash = '0x' + ethers__WEBPACK_IMPORTED_MODULE_3__[\"ethers\"].utils.solidityKeccak256(['address', 'uint256', 'uint256', 'address'], [recipient, amount, nonce, contractAddress]).toString('hex');\n  return hash;\n};\n\n//# sourceURL=webpack:///./src/paimentHelpers.js?");
 
 /***/ }),
 
@@ -2467,6 +2539,94 @@ eval("/* (ignored) */\n\n//# sourceURL=webpack:///buffer_(ignored)?");
 
 /***/ }),
 
+/***/ 22:
+/*!************************!*\
+  !*** buffer (ignored) ***!
+  \************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("/* (ignored) */\n\n//# sourceURL=webpack:///buffer_(ignored)?");
+
+/***/ }),
+
+/***/ 23:
+/*!************************!*\
+  !*** buffer (ignored) ***!
+  \************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("/* (ignored) */\n\n//# sourceURL=webpack:///buffer_(ignored)?");
+
+/***/ }),
+
+/***/ 24:
+/*!************************!*\
+  !*** buffer (ignored) ***!
+  \************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("/* (ignored) */\n\n//# sourceURL=webpack:///buffer_(ignored)?");
+
+/***/ }),
+
+/***/ 25:
+/*!************************!*\
+  !*** buffer (ignored) ***!
+  \************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("/* (ignored) */\n\n//# sourceURL=webpack:///buffer_(ignored)?");
+
+/***/ }),
+
+/***/ 26:
+/*!************************!*\
+  !*** buffer (ignored) ***!
+  \************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("/* (ignored) */\n\n//# sourceURL=webpack:///buffer_(ignored)?");
+
+/***/ }),
+
+/***/ 27:
+/*!************************!*\
+  !*** buffer (ignored) ***!
+  \************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("/* (ignored) */\n\n//# sourceURL=webpack:///buffer_(ignored)?");
+
+/***/ }),
+
+/***/ 28:
+/*!************************!*\
+  !*** buffer (ignored) ***!
+  \************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("/* (ignored) */\n\n//# sourceURL=webpack:///buffer_(ignored)?");
+
+/***/ }),
+
+/***/ 29:
+/*!************************!*\
+  !*** buffer (ignored) ***!
+  \************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("/* (ignored) */\n\n//# sourceURL=webpack:///buffer_(ignored)?");
+
+/***/ }),
+
 /***/ 3:
 /*!**********************!*\
   !*** util (ignored) ***!
@@ -2475,6 +2635,17 @@ eval("/* (ignored) */\n\n//# sourceURL=webpack:///buffer_(ignored)?");
 /***/ (function(module, exports) {
 
 eval("/* (ignored) */\n\n//# sourceURL=webpack:///util_(ignored)?");
+
+/***/ }),
+
+/***/ 30:
+/*!************************!*\
+  !*** buffer (ignored) ***!
+  \************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("/* (ignored) */\n\n//# sourceURL=webpack:///buffer_(ignored)?");
 
 /***/ }),
 

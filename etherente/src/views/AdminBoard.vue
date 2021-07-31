@@ -2,16 +2,19 @@
 	<div class="admin-container" v-if="contractCalled">
 		<SendTokens />
 		<TransactionList />
+		<SendRent />
 	</div>
 </template>
 
 <script>
 import SendTokens from '../components/AdminBoard/SendTokens.vue';
 import TransactionList from '../components/AdminBoard/TransactionList.vue';
+import SendRent from '../components/AdminBoard/SendRent.vue';
+
 import contractInstance from '../getWeb3Instance';
 export default {
 	name: 'AdminBoard',
-	components: { SendTokens, TransactionList },
+	components: { SendTokens, TransactionList, SendRent },
 	data() {
 		return {
 			contractCalled: false,
