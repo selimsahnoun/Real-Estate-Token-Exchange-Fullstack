@@ -50,6 +50,7 @@ Go to the specified directory and then run truffle installation guide [here](htt
 Go to specified directory and run the server
 
 	cd etherente
+	npm i
 	npm run serve
 
 5.	Run the build
