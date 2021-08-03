@@ -4,7 +4,7 @@
 
 ## Description 
 
-Etherente is a marketplace for buying and exchanging ERC 20 tokens of real estate investments in order to receive a rent each month powered by blockchain technology, inspired by the US RealT plateform.
+Etherente is a marketplace for buying and exchanging ERC 20 tokens of real estate :house_with_garden: investments in order to receive a rent each month powered by blockchain technology, inspired by the US RealT plateform.
 Ownership in most real estate properties is determined by paper deeds, on the Ethereum blockchain, on the other hand, they are denominated by digital tokens. 
 Etherente replaces paper deeds with digital tokens; a new mechanism for asset ownership, based on the Ethereum blockchain. 
 
@@ -31,7 +31,7 @@ As an admin:
 4.	Send Ethereum to micro channel payment system and then sign a message to send to token holders
 
 	
-## Installation Steps
+## :rocket:  Installation Steps
 1.	Clone Repository
 	
 First of all, create a new folder and execute the command below: 
@@ -60,7 +60,7 @@ The server calls a built directory so run at the same time and same directory
 
 You'll need [Ganache](https://www.trufflesuite.com/ganache) and [Web3](https://web3js.readthedocs.io/en/v3.0.0-rc.5/) to operate the contracts 
 
-## Built with
+## :computer: Built with
 
 * Vue 3 js 
 * SCSS/CSS
