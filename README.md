@@ -2,17 +2,15 @@
 
 ## Important : This project is for educational purposes only and the source code shouldn't be use in production
 
-### Description 
+### Description 
 
 Etherente is a marketplace for buying and exchanging ERC 20 tokens of real estate investments in order to receive a rent each month powered by blockchain technology, inspired by the US RealT plateform.
-
-Ownership of these real estate properties is denominated by digital tokens on the Ethereum blockchain. 
-Ownership in most real estate properties is determined by paper deeds. 
+Ownership in most real estate properties is determined by paper deeds, on the Ethereum blockchain, on the other hand, they are denominated by digital tokens. 
 Etherente replaces paper deeds with digital tokens; a new mechanism for asset ownership, based on the Ethereum blockchain. 
 
-Reminder: this project is for educational purposes only, no ownership is transmitted through this project.
+#### Reminder: this project is for educational purposes only, no ownership is transmitted through this project.
 
-What is Tokenization?
+### What is Tokenization?
 
 ‘Tokenization’ refers to the process of defining ownership over something as ownership in a digital token on Ethereum, which an ‘off-chain asset’ becomes represented ‘on-chain’. On-chain refers to being included in the Ethereum blockchain. 
 
