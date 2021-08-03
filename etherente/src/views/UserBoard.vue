@@ -8,6 +8,9 @@
 					<li>email</li>
 					<li>User Address</li>
 					<li>balance</li>
+					<li>{{ claim }}</li>
+					<li class="claim-button" @click="paymentClaim">claim payment</li>
+					<li></li>
 				</ul>
 			</div>
 			<div class="info-column">
@@ -22,6 +25,27 @@
 						</div>
 						<div v-if="balance">{{ balance }} tokens</div>
 					</li>
+					<li class="claim-input">
+						<div class="claim-input-container">
+							<input type="text" required v-model="claimAmountText" />
+							<div class="underline"></div>
+							<label>Copy amount here</label>
+						</div>
+					</li>
+					<li class="claim-input">
+						<div class="claim-input-container">
+							<input type="text" required v-model="claimNonceText" />
+							<div class="underline"></div>
+							<label>Copy nonce here</label>
+						</div>
+					</li>
+					<li class="claim-input">
+						<div class="claim-input-container">
+							<input type="text" required v-model="claimSignatureText" />
+							<div class="underline"></div>
+							<label>Copy signature here</label>
+						</div>
+					</li>
 				</ul>
 			</div>
 		</div>
@@ -30,16 +54,24 @@
 
 <script>
 import contractInstance from '../getWeb3Instance';
+import * as paimentHelpers from '../paimentHelpers';
 import { mapState, mapGetters } from 'vuex';
-import { stat } from 'fs';
 export default {
 	name: 'UserBoard',
 	data() {
 		return {
 			balance: null,
+			claimText: null,
+			claimSignatureText: null,
+			claimAmountText: null,
+			claimNonceText: null,
+			claim: null,
 		};
 	},
-	computed: { ...mapGetters(['getBalance']), ...mapState(['user', 'web3']) },
+	computed: {
+		...mapGetters(['getBalance', 'claimPayment']),
+		...mapState(['user', 'web3']),
+	},
 	async created() {
 		try {
 			const state = await contractInstance();
@@ -56,6 +88,18 @@ export default {
 		async balanceCheck() {
 			const balance = await this.getBalance(this.user.user.contract_address);
 			this.balance = balance;
+		},
+		async paymentClaim() {
+			const claimAmount = await this.web3.web3.utils.toWei(
+				this.claimAmountText.toString(),
+				'ether'
+			);
+			const claim = await this.claimPayment({
+				amount: claimAmount,
+				nonce: this.claimNonceText,
+				signature: this.claimSignatureText,
+			});
+			console.log(claim);
 		},
 	},
 };

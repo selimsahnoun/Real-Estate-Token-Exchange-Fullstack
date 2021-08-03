@@ -1,6 +1,7 @@
 import Web3 from 'web3';
 import ImmoTokenSaleContract from '../src/contracts/ImmoTokenSale.json';
 import ImmoTokenContract from '../src/contracts/ImmoToken.json';
+import ReceiverPaysContract from '../src/contracts/ReceiverPays.json';
 
 const getWeb3 = () =>
 	new Promise(async (resolve, reject) => {
@@ -47,6 +48,7 @@ const contractInstance = async () => {
 
 	const deployedSaleNetwork = ImmoTokenSaleContract.networks[networkId];
 	const deployedErc20Network = ImmoTokenContract.networks[networkId];
+	const recieverPaysNetwork = ReceiverPaysContract.networks[networkId];
 
 	const ImmoTokenInstance = new web3.eth.Contract(
 		ImmoTokenContract.abi,
@@ -56,7 +58,17 @@ const contractInstance = async () => {
 		ImmoTokenSaleContract.abi,
 		deployedSaleNetwork && deployedSaleNetwork.address
 	);
-	return { web3, accounts, ImmoTokenSaleInstance, ImmoTokenInstance };
+	const ReceiverPaysInstance = new web3.eth.Contract(
+		ReceiverPaysContract.abi,
+		recieverPaysNetwork && recieverPaysNetwork.address
+	);
+	return {
+		web3,
+		accounts,
+		ImmoTokenSaleInstance,
+		ImmoTokenInstance,
+		ReceiverPaysInstance,
+	};
 };
 
 export default contractInstance;

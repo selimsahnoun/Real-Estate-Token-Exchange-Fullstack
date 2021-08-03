@@ -5,6 +5,7 @@ export const state = {
 	accounts: null,
 	saleContract: null,
 	erc20Contract: null,
+	recieverPaysContract: null,
 };
 export const mutations = {
 	SET_ALL_STATE(state, payload) {
@@ -12,6 +13,7 @@ export const mutations = {
 		state.accounts = payload.accounts;
 		state.saleContract = payload.ImmoTokenSaleInstance;
 		state.erc20Contract = payload.ImmoTokenInstance;
+		state.recieverPaysContract = payload.ReceiverPaysInstance;
 	},
 
 	SET_TOTAL_TOKENS(state, payload) {
@@ -63,12 +65,26 @@ export const mutations = {
 			.buyOffer(payload.seller, payload.amount, payload.index)
 			.send({ from: state.accounts[0], value: payload.price })
 			.then((response) => {
-				console.log(response);
 				// // // send details to database
-				// transactionService.addSellOffer(
-				// 	response.events.SellOffer.returnValues._seller,
-				// 	response.events.SellOffer.returnValues._amount,
-				// 	response.events.SellOffer.returnValues._price
+				// transactionService.addRentPayment(
+				// 	response.events.RentPayment.returnValues._sender,
+				// 	response.events.RentPayment.returnValues._amount,
+				// );
+			});
+	},
+	//Send rent to the contract
+	async SEND_RENT_TO_CONTRACT(state, payload) {
+		await state.web3.eth
+			.sendTransaction({
+				from: state.accounts[0],
+				to: state.recieverPaysContract.options.address,
+				value: payload.rentAmount,
+			})
+			.then((response) => {
+				console.log(response);
+				// console.log(
+				// 	response.events.RentPayment.returnValues._sender,
+				// 	response.events.RentPayment.returnValues._amount
 				// );
 			});
 	},
@@ -88,6 +104,9 @@ export const actions = {
 	},
 	buyOfferTokens(context, payload) {
 		context.commit('BUY_OFFER_TOKENS', payload);
+	},
+	sendRentToContract(context, payload) {
+		context.commit('SEND_RENT_TO_CONTRACT', payload);
 	},
 };
 export const getters = {
@@ -120,5 +139,19 @@ export const getters = {
 			.offerBooking(address, index)
 			.call({ from: state.saleContract.options.address })
 			.then((balance) => balance);
+	},
+	//Hash payment of the rent
+	hashMessage: (state) => (payload) => {
+		return state.recieverPaysContract.methods
+			.getHashedMessage(payload.reciever, payload.amount, payload.nonce)
+			.call({ from: state.accounts[0] })
+			.then((response) => response);
+	},
+	//Claim payment of the rent
+	claimPayment: (state) => (payload) => {
+		return state.recieverPaysContract.methods
+			.claimPayment(payload.amount, payload.nonce, payload.signature)
+			.send({ from: state.accounts[0] })
+			.then((response) => response);
 	},
 };

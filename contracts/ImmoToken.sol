@@ -1,4 +1,6 @@
-pragma solidity ^0.5.16;
+// SPDX-License-Identifier: UNLICENSED
+
+pragma solidity >=0.7.0 <0.9.0;
 
 contract ImmoToken {
     string public name = "Immo Token";
@@ -21,7 +23,7 @@ contract ImmoToken {
     mapping(address => uint256) public balanceOf;
     mapping(address => mapping(address  => uint256)) public allowance; //offre de vente;
     
-    constructor(uint256 _initialSupply) public  {
+    constructor(uint256 _initialSupply)  {
         balanceOf[msg.sender] = _initialSupply;
         totalSupply = _initialSupply;   
     }

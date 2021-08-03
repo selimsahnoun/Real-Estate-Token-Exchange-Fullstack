@@ -115,14 +115,14 @@
 	padding: 0;
 	z-index: 1;
 	border: none;
-	position: absolute;
+
 	display: block;
 	max-width: 250px;
-	left: 0;
-	right: 0;
+
 	margin-left: auto;
 	margin-right: auto;
-	height: 100%;
+	background: transparent;
+	height: 48px;
 	text-align: center;
 	line-height: 46px;
 	color: var(--themeColor);

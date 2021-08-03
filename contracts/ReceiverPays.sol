@@ -2,24 +2,30 @@
 pragma solidity >=0.7.0 <0.9.0;
 contract ReceiverPays {
     address owner = msg.sender;
-
     mapping(uint256 => bool) usedNonces;
+    event RentPayment(address _sender, uint _amount);
+    event RentSent(address _sender, address _signature);
 
-    constructor() payable {}
+    constructor() payable {
+
+    }
 
     function claimPayment(uint256 amount, uint256 nonce, bytes memory signature) public {
-        require(!usedNonces[nonce]);
-        usedNonces[nonce] = true;
-
+        //require(!usedNonces[nonce]);
         // this recreates the message that was signed on the client
         bytes32 message = prefixed(keccak256(abi.encodePacked(msg.sender, amount, nonce, this)));
 
-        require(recoverSigner(message, signature) == owner);
-
-        payable(msg.sender).transfer(amount);
+       //require(recoverSigner(message, signature) == owner);
+        emit RentSent(recoverSigner(message, signature), owner);
+        //usedNonces[nonce] = true;
+        //payable(msg.sender).transfer(amount);
     }
 
-    /// destroy the contract and reclaim the leftover funds.
+    function getHashedMessage(address reciever, uint256 amount, uint256 nonce) view public returns (bytes32) {
+       return prefixed(keccak256(abi.encodePacked(reciever, amount, nonce, this)));
+    }
+
+     /// destroy the contract and reclaim the leftover funds.
     function shutdown() public {
         require(msg.sender == owner);
         selfdestruct(payable(msg.sender));
@@ -58,5 +64,10 @@ contract ReceiverPays {
     /// builds a prefixed hash to mimic the behavior of eth_sign.
     function prefixed(bytes32 hash) internal pure returns (bytes32) {
         return keccak256(abi.encodePacked("\x19Ethereum Signed Message:\n32", hash));
+    }
+
+    // emit rent payment event when recieved
+    receive() external payable {
+        emit RentPayment(msg.sender, msg.value);
     }
 }

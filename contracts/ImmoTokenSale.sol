@@ -1,4 +1,5 @@
-pragma solidity ^0.5.16;
+// SPDX-License-Identifier: UNLICENSED
+pragma solidity >=0.7.0 <0.9.0;
 
 import './ImmoToken.sol';
 
@@ -23,7 +24,7 @@ contract ImmoTokenSale {
 
     mapping(address => Offer[]) public offerBooking;
 
-    constructor(ImmoToken _tokenContract, uint256 _tokenPrice) public{
+    constructor(ImmoToken _tokenContract, uint256 _tokenPrice) {
         //assign an admin
         admin = msg.sender;
         //token contract
@@ -80,6 +81,6 @@ contract ImmoTokenSale {
         //transfer the amount of tokens left to the admin
         require(tokenContract.transfer(admin, tokenContract.balanceOf(address(this))));
         //destroy contract
-        selfdestruct(msg.sender);
+        selfdestruct(payable(msg.sender));    
     }
 }
