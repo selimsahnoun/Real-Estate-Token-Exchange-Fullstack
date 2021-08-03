@@ -72,3 +72,8 @@ You'll need [Ganache](https://www.trufflesuite.com/ganache) and [Web3](https://w
 * Web3 js
 * JWT Library
 
+## Architecture
+
+![alt text](https://firebasestorage.googleapis.com/v0/b/portfoliov1-1.appspot.com/o/Architecture.jpeg?alt=media&token=ea5eca2e-df31-430a-a991-6b61cf1574c2)
+
+
