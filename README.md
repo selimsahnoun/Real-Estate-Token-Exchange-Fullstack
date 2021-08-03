@@ -2,7 +2,7 @@
 
 ## Important : This project is for educational purposes only and the source code shouldn't be use in production
 
-### Description 
+## Description 
 
 Etherente is a marketplace for buying and exchanging ERC 20 tokens of real estate investments in order to receive a rent each month powered by blockchain technology, inspired by the US RealT plateform.
 Ownership in most real estate properties is determined by paper deeds, on the Ethereum blockchain, on the other hand, they are denominated by digital tokens. 
@@ -10,11 +10,11 @@ Etherente replaces paper deeds with digital tokens; a new mechanism for asset ow
 
 #### Reminder: this project is for educational purposes only, no ownership is transmitted through this project.
 
-### What is Tokenization?
+## What is Tokenization?
 
 ‘Tokenization’ refers to the process of defining ownership over something as ownership in a digital token on Ethereum, which an ‘off-chain asset’ becomes represented ‘on-chain’. On-chain refers to being included in the Ethereum blockchain. 
 
-Features
+## Features
 
 As a user:
 1.	JWT Authentication 
@@ -23,6 +23,7 @@ As a user:
 4.	Buy tokens sold on the platform from users of the platform 
 5.	Sell tokens on the platform for desired amount and the desired price
 6.	Claim rent through a micro channel payment system (receive an amount to claim, a nonce and a signature)
+
 As an admin:
 1.	JWT Authentication 
 2.	Login and registration through hashing of the password with a salt generation
@@ -30,9 +31,22 @@ As an admin:
 4.	Send Ethereum to micro channel payment system and then sign a message to send to token holders
 
 	
-Installation Steps
+## Installation Steps
+	1. Clone repo 
+	
+ To start a blockchain node, go to Pycoin folder and execute the command below: 
+  
+  ```bash
+  python node.py -p 5000
+  ```
+  You can access the blockchain frontend dashboards from your browser by going to localhost:5000
+  You can add a new node to blockchain by executing the same command and specifying a port that is not already used. For example, 
+  
+   ```bash
+  python node.py -p 5001
+  ```
+  
 
-1.	Clone repo 
 2.	Run truffle 
 3.	Change directory 
 4.	Run server 
