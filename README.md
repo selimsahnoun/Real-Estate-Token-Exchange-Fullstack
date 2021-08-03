@@ -32,32 +32,42 @@ As an admin:
 
 	
 ## Installation Steps
-	1. Clone repo 
+1.	Clone Repository
 	
- To start a blockchain node, go to Pycoin folder and execute the command below: 
-  
-  ```bash
-  python node.py -p 5000
-  ```
-  You can access the blockchain frontend dashboards from your browser by going to localhost:5000
-  You can add a new node to blockchain by executing the same command and specifying a port that is not already used. For example, 
-  
-   ```bash
-  python node.py -p 5001
-  ```
-  
+First of all, create a new folder and execute the command below: 
 
+	git clone https://github.com/selimsahnoun/Real-Estate-Token-Exchange-Fullstack.git
+	
 2.	Run truffle 
-3.	Change directory 
-4.	Run server 
-5.	Run build 
 
-Built with 
-	Vue 3 js 
-	Scss
-	Node JS 
-	Mongo DB (Atlas)
-	Solidty
-	Truffle
-	Web 3 js
-![image](https://user-images.githubusercontent.com/70513597/128046673-e6cbeed6-fbe4-4015-8b91-0031e92a17ec.png)
+Go to the specified directory and then run truffle installation guide [here](https://www.trufflesuite.com/docs/truffle/getting-started/installation)
+	
+	cd Real-Estate-Token-Exchange-Fullstack
+	truffle migrate 
+
+3.	Run server
+
+Go to specified directory and run the server
+
+	cd etherente
+	npm run serve
+
+5.	Run the build
+ 
+The server calls a built directory so run at the same time and same directory 
+
+	npm run build
+
+You'll need [Ganache](https://www.trufflesuite.com/ganache) and [Web3](https://web3js.readthedocs.io/en/v3.0.0-rc.5/) to operate the contracts 
+
+## Built with
+
+* Vue 3 js 
+* SCSS/CSS
+* Node JS 
+* Mongo DB (Atlas)
+* Solidty
+* Truffle
+* Web3 js
+* JWT Library
+
