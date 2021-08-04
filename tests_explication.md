@@ -1,9 +1,6 @@
 # Tests explication
 
-```diff
-+ ## ImmoToken Contract:
-
-```
+## :page_with_curl: ImmoToken Contract:
 
 ### initializes the contract with the correct values:
 
@@ -28,3 +25,18 @@
 - Then less than approved amount and expect a success
 - Then check that the correct event is triggered with the correct parameters: sender, receiver, amount
 - Then check that the balance has been correctly modified for both parties
+
+## :page_with_curl: ImmoTokenSale Contract:
+
+### initializes the contract with the correct values:
+
+- It will test that the contract has been initialized with a correct address and linked with the ImmoToken contract upon deployment
+
+### Allows token buying
+
+- Credit the contract with tokens from the ERC20 by the admin, then test if a buyer tries to buy tokens.
+- Check if the right event is triggered with the correct parameters: name, buyer address, amount of tokens
+- Check if the number of tokens sold is correctly incremented
+- Check if the number of tokens left for sale is correctly decremented
+- Check if the value sent is different than the correct amount required to buy 100 tokens and expect a revert
+- Check if the buyer tries to buy more tokens than there is for sale and expect a revert

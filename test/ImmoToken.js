@@ -12,7 +12,7 @@ contract('ImmoToken', function (accounts) {
 				assert.equal(
 					title,
 					'Immo Token',
-					'correctly set the title to : Immo Token'
+					'correctly set the title to : 55 57 rue du Faubourg Saint Honore 75008'
 				);
 				return tokenInstance.symbol();
 			})

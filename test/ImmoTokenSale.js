@@ -34,7 +34,7 @@ contract('ImmoTokenSale', function (accounts) {
 				);
 			});
 	});
-	it('facilitates token buying', async function () {
+	it('Allows token buying', async function () {
 		const ImmoTokenInstance = await ImmoToken.deployed();
 		return ImmoTokenSale.deployed()
 			.then(async function (instance) {
