@@ -1,22 +1,24 @@
 // SPDX-License-Identifier: GPL-3.0
+//import "@openzeppelin/contracts/utils/cryptography/ECDSA.sol";
+
 pragma solidity >=0.7.0 <0.9.0;
 contract ReceiverPays {
     address owner = msg.sender;
     mapping(uint256 => bool) usedNonces;
     event RentPayment(address _sender, uint _amount);
-    event RentSent(address _recoveredAddress, address _owner);
+    event RentSent(address _recoveredAddress, address _owner, bytes32 _message);
 
     constructor() payable {
 
     }
 
-    function claimPayment(uint256 amount, uint256 nonce, bytes memory signature) public {
+    function claimPayment(uint256 amount, uint256 nonce, bytes memory signature, uint8 v, bytes32 r, bytes32 s) public {
         //require(!usedNonces[nonce]);
         // this recreates the message that was signed on the client
         bytes32 message = prefixed(keccak256(abi.encodePacked(msg.sender, amount, nonce, this)));
 
        //require(recoverSigner(message, signature) == owner);
-        emit RentSent(recoverSigner(message, signature), owner);
+        emit RentSent(recoverSigner(message, signature, v, r, s), owner, message);
         //usedNonces[nonce] = true;
         //payable(msg.sender).transfer(amount);
     }
@@ -51,14 +53,16 @@ contract ReceiverPays {
         return (v, r, s);
     }
 
-    function recoverSigner(bytes32 message, bytes memory sig)
+    function recoverSigner(bytes32 message, bytes memory sig, uint8 v, bytes32 r, bytes32 s)
         internal
         pure
         returns (address)
     {
-        (uint8 v, bytes32 r, bytes32 s) = splitSignature(sig);
+        //(uint8 v, bytes32 r, bytes32 s) = splitSignature(sig);
 
-        return ecrecover(message, v, r, s);
+       return ecrecover(message, v, r, s);
+
+        //return ECDSA.recover(message, sig);
     }
 
     /// builds a prefixed hash to mimic the behavior of eth_sign.
@@ -66,7 +70,7 @@ contract ReceiverPays {
         return keccak256(abi.encodePacked("\x19Ethereum Signed Message:\n32", hash));
     }
 
-    // emit rent payment event when recieved
+    // emit rent payment event when received
     receive() external payable {
         emit RentPayment(msg.sender, msg.value);
     }

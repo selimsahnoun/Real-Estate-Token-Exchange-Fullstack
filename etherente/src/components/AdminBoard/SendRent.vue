@@ -105,16 +105,27 @@ export default {
 				console.log('hash : ', hash);
 				// var signature = await this.web3.web3.eth.personal.sign(
 				// 	hash,
-				// 	this.web3.accounts[0]
+				// 	'0xb358BBbc3E3636a83D2AE83e297BC6E0bEF5C820'
 				// );
 				var signature = await this.web3.web3.eth.accounts.sign(
 					hash,
-					'3ea16358ae049a131968351949b1dbf43248b6175e4e26e24bb18bad363809ea'
+					'0x3ea16358ae049a131968351949b1dbf43248b6175e4e26e24bb18bad363809ea'
 				);
+				// var messageBuffer = (hash, 'hex');
+				// var r = signature.substring(0, 64);
+				// var s = signature.substring(64, 128);
+				// var v = signature.substring(128, 130);
+				var recoveredAddress = this.web3.web3.eth.accounts.recover(
+					signature.message,
+					signature.v,
+					signature.r,
+					signature.s
+				);
+
 				// signature =
 				// 	signature.substr(0, 130) +
 				// 	(signature.substr(130) == '00' ? '1b' : '1c');
-				this.signature = signature;
+				this.signature = { recoveredAddress, signature };
 			} catch (error) {
 				// Catch any errors for any of the above operations.
 				alert(`Sign Rent Failed. Check console for details.`);

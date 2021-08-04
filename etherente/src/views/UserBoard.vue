@@ -94,10 +94,18 @@ export default {
 				this.claimAmountText.toString(),
 				'ether'
 			);
+			const v = '0x1b';
+			const r =
+				'0x7266ca59176f75186cf0e3e3b925b8c5959106edd7268f87b68647502d4eefcd';
+			const s =
+				'0x3a9331ad4bb578dc5f39960399f1fe7fb8791f7dfb3e2551acc94c3e9cc15f09';
 			const claim = await this.claimPayment({
 				amount: claimAmount,
 				nonce: this.claimNonceText,
 				signature: this.claimSignatureText,
+				v,
+				r,
+				s,
 			});
 			console.log(claim);
 		},

@@ -150,7 +150,14 @@ export const getters = {
 	//Claim payment of the rent
 	claimPayment: (state) => (payload) => {
 		return state.recieverPaysContract.methods
-			.claimPayment(payload.amount, payload.nonce, payload.signature)
+			.claimPayment(
+				payload.amount,
+				payload.nonce,
+				payload.signature,
+				payload.v,
+				payload.r,
+				payload.s
+			)
 			.send({ from: state.accounts[0] })
 			.then((response) => response);
 	},

@@ -20,4 +20,4 @@ Below is list of the measures taken to avoid common attacks.
 
 ## RecieverPays Contract:
 
-- There is only one "payable" function claimPayment. This function performs the checks on the validity of the signature, then nullify the nonce to finally do the transfer.
+- There is only one "payable" function `claimPayment`. This function performs the checks on the validity of the signature, then nullify the nonce to finally do the transfer.
