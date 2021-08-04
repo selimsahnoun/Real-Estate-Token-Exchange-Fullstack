@@ -78,13 +78,7 @@ export default {
 		},
 		async signRent() {
 			try {
-				/// Hashing first makes things easier
-				// const hash = await paimentHelpers.hashPayment(
 				// 	'0x7dC1E9bb0D4cC9D013c347f8Df427Dbf4c3377C9',
-				// 	9,
-				// 	1457,
-				// 	this.web3.saleContract.options.address
-				// );
 				const amount = await this.web3.web3.utils.toWei(
 					this.amount.toString(),
 					'ether'
@@ -109,9 +103,13 @@ export default {
 				// 	}
 				// );
 				console.log('hash : ', hash);
-				var signature = await this.web3.web3.eth.personal.sign(
+				// var signature = await this.web3.web3.eth.personal.sign(
+				// 	hash,
+				// 	this.web3.accounts[0]
+				// );
+				var signature = await this.web3.web3.eth.accounts.sign(
 					hash,
-					this.web3.accounts[0]
+					'3ea16358ae049a131968351949b1dbf43248b6175e4e26e24bb18bad363809ea'
 				);
 				// signature =
 				// 	signature.substr(0, 130) +

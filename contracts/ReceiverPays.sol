@@ -4,7 +4,7 @@ contract ReceiverPays {
     address owner = msg.sender;
     mapping(uint256 => bool) usedNonces;
     event RentPayment(address _sender, uint _amount);
-    event RentSent(address _sender, address _signature);
+    event RentSent(address _recoveredAddress, address _owner);
 
     constructor() payable {
 

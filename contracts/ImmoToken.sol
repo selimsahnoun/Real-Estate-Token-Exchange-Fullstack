@@ -3,6 +3,8 @@
 pragma solidity >=0.7.0 <0.9.0;
 
 contract ImmoToken {
+   
+
     string public name = "Immo Token";
     string public symbol = "Stone";
     string public version = "Immo Token v1.0";
