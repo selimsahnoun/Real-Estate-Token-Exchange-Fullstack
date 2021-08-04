@@ -6,13 +6,13 @@ contract('ImmoToken', function (accounts) {
 		return ImmoToken.deployed()
 			.then(async function (instance) {
 				tokenInstance = instance;
-				return tokenInstance.name();
+				return tokenInstance.title();
 			})
-			.then(function (name) {
+			.then(function (title) {
 				assert.equal(
-					name,
+					title,
 					'Immo Token',
-					'correctly set the name to : Immo Token'
+					'correctly set the title to : Immo Token'
 				);
 				return tokenInstance.symbol();
 			})

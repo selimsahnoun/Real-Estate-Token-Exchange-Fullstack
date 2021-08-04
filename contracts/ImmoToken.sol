@@ -5,7 +5,7 @@ pragma solidity >=0.7.0 <0.9.0;
 contract ImmoToken {
    
 
-    string public name = "Immo Token";
+    string public title = "55 57 rue du Faubourg Saint Honore 75008";
     string public symbol = "Stone";
     string public version = "Immo Token v1.0";
     uint256 public totalSupply;
