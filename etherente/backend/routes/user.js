@@ -140,13 +140,13 @@ router.post('/tokenverification', async (req, res) => {
 				});
 			} else {
 				errorsToSend.push('Invalid Token');
-				res.status(400).json({
+				res.status(401).json({
 					errors: errorsToSend,
 				});
 			}
 		} else {
 			errorsToSend.push('Token is invalid');
-			res.status(400).send({
+			res.status(401).send({
 				errors: errorsToSend,
 			});
 		}

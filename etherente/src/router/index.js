@@ -35,7 +35,6 @@ const routes = [
 		path: '/user/board',
 		name: 'UserBoard',
 		component: UserBoard,
-		meta: { requiresAuth: true },
 	},
 	{
 		path: '/user/login',
@@ -65,10 +64,25 @@ const router = createRouter({
 });
 
 router.beforeEach((to, from, next) => {
+	// redirect to login page if user is not logged in and trying to access a restricted page
+	const publicPages = [
+		'/token/market',
+		'/',
+		'/marketplace',
+		'/user/login',
+		'/user/register',
+	];
+	const authRequired = !publicPages.includes(to.path);
+	const adminRequired = to.path === '/user/adminboard' ? true : false;
 	const loggedIn = localStorage.getItem('user');
-	if (to.matched.some((record) => record.meta.requiresAuth) && !loggedIn) {
-		next('/');
+
+	if (authRequired && !loggedIn) {
+		return next('/user/login');
 	}
+	if (adminRequired && !JSON.parse(loggedIn).admin) {
+		return next('/');
+	}
+
 	next();
 });
 
