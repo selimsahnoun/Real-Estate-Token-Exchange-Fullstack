@@ -59,3 +59,20 @@
 
 - Check if not an owner tries to end sale and expect a revert
 - Check if owner recieves remaining tokens
+
+## :page_with_curl: ReceiverRent Contract:
+
+### Allows users to credit the contract with Ethers:
+
+- check if it emits the correct event
+- check if it receives Ethers
+
+### Allows user to hash messages :
+
+- check if it returns a diffrent hash for a different message
+
+### Allows user to claim rent :
+
+- check if it returns the claimed amount of ethers
+- check if it declines claim if nonce already used
+- check if it declines claim if the signature is not from admin

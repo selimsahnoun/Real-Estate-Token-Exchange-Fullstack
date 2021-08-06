@@ -1,6 +1,6 @@
 const ImmoToken = artifacts.require('ImmoToken');
 const ImmoTokenSale = artifacts.require('ImmoTokenSale');
-const ReceiverPays = artifacts.require('ReceiverPays');
+const ReceiverRent = artifacts.require('ReceiverRent');
 
 const price = 100000000000000; //in wei = 0.0001 Eth
 const tokenSupply = 100000;
@@ -26,5 +26,5 @@ module.exports = async function (deployer) {
 	const contractAllowed = await ImmoTokenInstance.saleContract.call();
 	console.log('Allowed contract: ', contractAllowed);
 	//deploy RECIEVER PAYS
-	await deployer.deploy(ReceiverPays);
+	await deployer.deploy(ReceiverRent);
 };
