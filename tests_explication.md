@@ -32,7 +32,7 @@
 
 - It will test that the contract has been initialized with a correct address and linked with the ImmoToken contract upon deployment
 
-### Allows token buying
+### Allows user to buy tokens
 
 - Credit the contract with tokens from the ERC20 by the admin, then test if a buyer tries to buy tokens.
 - Check if the right event is triggered with the correct parameters: name, buyer address, amount of tokens
@@ -40,3 +40,22 @@
 - Check if the number of tokens left for sale is correctly decremented
 - Check if the value sent is different than the correct amount required to buy 100 tokens and expect a revert
 - Check if the buyer tries to buy more tokens than there is for sale and expect a revert
+
+### Allows a seller user to present an offer to sell tokens
+
+- Check if it records the correct number of tokens to sell
+- Check if it records the correct price per token to sell
+- Check if it triggers the correct even with the correct parameters
+
+### Allows a buyer user to buy tokens from another user
+
+- Check if it credits the buyer's balance with the correct number of tokens
+- Check if it withdraws the seller's balance with the correct number of tokens
+- Check if remaining tokens left in the offer is reduced with the correct number of tokens
+- Check if the buyer tries to buy more than tokens in offer and expect a revert
+- Check if the buyer tries to buy for a diffrent value than the price in offer and expect a revert
+
+### Allows owner to end the sale and receive remaining tokens in the contract
+
+- Check if not an owner tries to end sale and expect a revert
+- Check if owner recieves remaining tokens

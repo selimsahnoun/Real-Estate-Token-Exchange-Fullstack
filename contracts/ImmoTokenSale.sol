@@ -7,6 +7,7 @@ contract ImmoTokenSale {
     address admin; 
     ImmoToken public tokenContract;
     uint256 public tokenPrice;
+    uint256 public index = 0;
     uint256 public tokensSold;
     event Sell(
         address _buyer,
@@ -19,7 +20,8 @@ contract ImmoTokenSale {
     event SellOffer(
         address _seller,
         uint256 _amount,
-        uint256 _price
+        uint256 _price,
+        uint256 _index
    );
 
     mapping(address => Offer[]) public offerBooking;
@@ -68,7 +70,9 @@ contract ImmoTokenSale {
         //book the offer
         offerBooking[msg.sender].push(Offer({amount:_numberOfTokens,price:_price}));
         //emit the event
-        emit SellOffer(msg.sender, _numberOfTokens, _price);
+        emit SellOffer(msg.sender, _numberOfTokens, _price, index);
+        //increment the index
+        index +=1;
         return true;
     }
 /** @dev Allow user to buy the tokens that are for sale

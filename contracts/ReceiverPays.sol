@@ -12,13 +12,13 @@ contract ReceiverPays {
 
     }
 
-    function claimPayment(uint256 amount, uint256 nonce, bytes memory signature, uint8 v, bytes32 r, bytes32 s) public {
+    function claimPayment(uint256 amount, uint256 nonce, bytes memory signature) public {
         //require(!usedNonces[nonce]);
         // this recreates the message that was signed on the client
         bytes32 message = prefixed(keccak256(abi.encodePacked(msg.sender, amount, nonce, this)));
 
        //require(recoverSigner(message, signature) == owner);
-        emit RentSent(recoverSigner(message, signature, v, r, s), owner, message);
+        emit RentSent(recoverSigner(message, signature), owner, message);
         //usedNonces[nonce] = true;
         //payable(msg.sender).transfer(amount);
     }
@@ -53,12 +53,12 @@ contract ReceiverPays {
         return (v, r, s);
     }
 
-    function recoverSigner(bytes32 message, bytes memory sig, uint8 v, bytes32 r, bytes32 s)
+    function recoverSigner(bytes32 message, bytes memory sig)
         internal
         pure
         returns (address)
     {
-        //(uint8 v, bytes32 r, bytes32 s) = splitSignature(sig);
+        (uint8 v, bytes32 r, bytes32 s) = splitSignature(sig);
 
        return ecrecover(message, v, r, s);
 
