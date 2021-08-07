@@ -8,7 +8,6 @@
 		"build": "vue-cli-service build",
 		"test:unit": "vue-cli-service test:unit",
 		"startfordev": "nodemon server.js",
-		"heroku-postbuild": "npm install && npm vue-cli-service build",
 		"start": "node server.js"
 	},
 	"engines": {
