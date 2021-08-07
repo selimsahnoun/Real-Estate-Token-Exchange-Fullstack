@@ -2,7 +2,7 @@ import axios from 'axios';
 
 export const register = (credentials) => {
 	return axios
-		.post('//localhost:8081/user/register', credentials)
+		.post('/user/register', credentials)
 		.then((token) => token)
 		.catch((err) => err.response);
 };
@@ -14,7 +14,7 @@ export const clearAuthorization = () => {
 };
 export const login = (credentials) => {
 	return axios
-		.post('//localhost:8081/user/login', credentials)
+		.post('/user/login', credentials)
 		.then((data) => data)
 		.catch((err) => err.response);
 };
@@ -36,7 +36,7 @@ export const checkToken = (callback) => {
 };
 export const verifySession = (userData) => {
 	return axios
-		.post('//localhost:8081/user/tokenverification', userData)
+		.post('/user/tokenverification', userData)
 		.then((data) => data)
 		.catch((err) => err.response);
 };
