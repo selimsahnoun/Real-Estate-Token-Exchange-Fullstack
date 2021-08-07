@@ -33,7 +33,8 @@ export default {
 @import url('./assets/styles/main.scss');
 .back-image {
 	width: 100%;
-	background: url('./assets/pictures/background.png') no-repeat 50% 50%;
+	background: url('https://firebasestorage.googleapis.com/v0/b/etherente.appspot.com/o/background.png?alt=media&token=97aba1b1-f09b-43c2-ac98-1e8b85f9cc0c')
+		no-repeat 50% 50%;
 	height: 100vh;
 	background-size: cover;
 	position: absolute;

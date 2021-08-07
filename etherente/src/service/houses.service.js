@@ -17,5 +17,8 @@ export const checkPicture = (pictureUrl) => {
 	return axios
 		.get(pictureUrl)
 		.then(() => pictureUrl)
-		.catch(() => '../../assets/pictures/DummyHouse.jpg');
+		.catch(
+			() =>
+				'https://firebasestorage.googleapis.com/v0/b/etherente.appspot.com/o/dummyHouse.jpg?alt=media&token=d7f28f4b-18fa-478c-a8d1-5b6a5b99be6a'
+		);
 };

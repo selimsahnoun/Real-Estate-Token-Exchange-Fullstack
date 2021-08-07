@@ -62,11 +62,13 @@ export default {
 }
 
 .left-switch {
-	background: url('../../assets/pictures/polygone2.png') no-repeat 50% 50%;
+	background: url('https://firebasestorage.googleapis.com/v0/b/etherente.appspot.com/o/polygone2.png?alt=media&token=b5f75011-f383-4c75-a0ec-8be2efae01cb')
+		no-repeat 50% 50%;
 	cursor: pointer;
 }
 .right-switch {
-	background: url('../../assets/pictures/polygone1.png') no-repeat 50% 50%;
+	background: url('https://firebasestorage.googleapis.com/v0/b/etherente.appspot.com/o/polygone1.png?alt=media&token=66cc165c-7810-4eed-80b1-36735c65b5ec')
+		no-repeat 50% 50%;
 	cursor: pointer;
 }
 </style>
