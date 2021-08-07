@@ -1,0 +1,26 @@
+{
+  "name": "real-estate-token-exchange-fullstack",
+  "version": "1.0.0",
+  "description": "## Important : This project is for educational purposes only and the source code shouldn't be use in production",
+  "main": "truffle-config.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/selimsahnoun/Real-Estate-Token-Exchange-Fullstack.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/selimsahnoun/Real-Estate-Token-Exchange-Fullstack/issues"
+  },
+  "homepage": "https://github.com/selimsahnoun/Real-Estate-Token-Exchange-Fullstack#readme",
+  "dependencies": {
+    "@truffle/hdwallet-provider": "^1.4.3",
+    "dotenv": "^10.0.0"
+  }
+}
