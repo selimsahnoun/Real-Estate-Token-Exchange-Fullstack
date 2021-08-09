@@ -1,8 +1,8 @@
 # Solidity Patterns
 
-## Behavioral Patterns
+## Behavioral Patterns
 
-### Guard Check
+### Guard Check
 
 Ensure that the behavior of a smart contract and its input parameters are as expected.
 The desired behavior of a smart contract would be to check for all required circumstances and only proceed if everything is as intended.
