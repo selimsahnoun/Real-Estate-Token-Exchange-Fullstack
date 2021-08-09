@@ -1,7 +1,8 @@
 .DS_Store
 node_modules
-#/dist
+/dist
 
+/backend/database/index.js
 
 # local env files
 .env.local

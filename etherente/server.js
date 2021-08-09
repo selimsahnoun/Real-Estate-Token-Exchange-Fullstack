@@ -1,7 +1,7 @@
 //------Server----------------------------------//
 require('dotenv').config();
 const express = require('express');
-const PORT = 8081 || process.env.PORT;
+const PORT = process.env.PORT || 8081;
 const app = express();
 //------Routes----------------------------------//
 const user = require('./backend/routes/user');
