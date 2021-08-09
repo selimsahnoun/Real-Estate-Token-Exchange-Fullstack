@@ -8,7 +8,7 @@
 					<li>email</li>
 					<li>User Address</li>
 					<li>balance</li>
-					<li>{{ claim }}</li>
+					<li></li>
 					<li class="claim-button" @click="paymentClaim">claim payment</li>
 					<li></li>
 				</ul>
@@ -66,6 +66,7 @@ export default {
 			claimAmountText: null,
 			claimNonceText: null,
 			claim: null,
+			stateSet: false,
 		};
 	},
 	computed: {
@@ -94,20 +95,22 @@ export default {
 				this.claimAmountText.toString(),
 				'ether'
 			);
-			const v = '0x1b';
-			const r =
-				'0x7266ca59176f75186cf0e3e3b925b8c5959106edd7268f87b68647502d4eefcd';
-			const s =
-				'0x3a9331ad4bb578dc5f39960399f1fe7fb8791f7dfb3e2551acc94c3e9cc15f09';
+			let v = '0x' + this.claimSignatureText.slice(128 + 2, 130 + 2);
+			let r = '0x' + this.claimSignatureText.slice(2, 64 + 2);
+			let s = '0x' + this.claimSignatureText.slice(64 + 2, 128 + 2);
+			//--in some cases with the accounts on Ganach, v is 0 or 1 when it's supposed to be 27 or 28
+			if (v == '0x00') {
+				v = '0x1b';
+			} else if (v == '0x01') {
+				v = '0x1c';
+			}
 			const claim = await this.claimPayment({
 				amount: claimAmount,
 				nonce: this.claimNonceText,
-				signature: this.claimSignatureText,
 				v,
 				r,
 				s,
 			});
-			console.log(claim);
 		},
 	},
 };

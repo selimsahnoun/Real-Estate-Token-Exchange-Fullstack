@@ -21,6 +21,10 @@
   "homepage": "https://github.com/selimsahnoun/Real-Estate-Token-Exchange-Fullstack#readme",
   "dependencies": {
     "@truffle/hdwallet-provider": "^1.4.3",
-    "dotenv": "^10.0.0"
+    "dotenv": "^10.0.0",
+    "solidity-docgen": "^0.5.13"
+  },
+  "devDependencies": {
+    "solc-0.8": "npm:solc@^0.8.6"
   }
 }

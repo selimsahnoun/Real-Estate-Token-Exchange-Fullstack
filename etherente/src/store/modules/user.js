@@ -1,13 +1,16 @@
 import * as userService from '../../service/user.service.js';
-export const state = { user: null, registerErrors: null, loginErrors: null };
+export const state = {
+	user: null,
+	registerErrors: null,
+	loginErrors: null,
+	userSet: false,
+};
 
 export const mutations = {
 	SET_USER_DATA(state, userData) {
 		state.errors = null;
 		state.user = userData;
 		localStorage.setItem('user', JSON.stringify(userData));
-		// userService.clearAuthorization();
-		// userService.authorization(userData);
 	},
 	CLEAR_USER_DATA() {
 		localStorage.removeItem('user');

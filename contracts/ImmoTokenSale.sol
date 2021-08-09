@@ -2,7 +2,10 @@
 pragma solidity ^0.8.6;
 
 import './ImmoToken.sol';
-
+/// @title A plateform that handles Real Estate token exchange 
+/// @author Selim Sahnoun
+/// @notice A plateform that handles Real Estate token exchange. You can use this contract for only the most basic simulation
+/// @dev This is an experimental contract, no real estate goods are linked to it
 contract ImmoTokenSale {
     address admin; 
     ImmoToken public tokenContract;
@@ -25,6 +28,10 @@ contract ImmoTokenSale {
    );
 
     mapping(address => Offer[]) public offerBooking;
+    /// @notice assign an admin, connect to the ImmoToken contract and a price for a single token
+    /// @dev The Admin will never change
+    /// @param _tokenContract ImmoToken contract ERC 20 inspired token
+    /// @param _tokenPrice Price of a single token
 
     constructor(ImmoToken _tokenContract, uint256 _tokenPrice) {
         //assign an admin
@@ -34,7 +41,7 @@ contract ImmoTokenSale {
         //token price
         tokenPrice = _tokenPrice;
     }
-      /** @dev Multiply function 
+      /** @notice Simple Multiply function 
       */
     function mul(uint256 a, uint256 b) internal pure returns (uint256 c) {
         if (a == 0) {
@@ -44,7 +51,8 @@ contract ImmoTokenSale {
         assert(c / a == b);
         return c;
     }
-    /** @dev Allow user to buy ERC20 tokens.
+    /** @notice Allow user to buy ERC20 tokens.
+      * @dev check the Ether value is equal to price of tokens, there is enough tokens remaining, then run the transfer.
       * @param _numberOfTokens Number of Tokens the user decided to buy.
       */
     function buyTokens(uint256 _numberOfTokens) public payable{
@@ -59,7 +67,8 @@ contract ImmoTokenSale {
         //trigger sell event
         emit Sell(msg.sender,_numberOfTokens);
     }
-/** @dev Allow user to put tokens for sale, it is booked as an offer {amount: number of tokens to sell, price: price per token}.
+/** @notice Allow user to put tokens for sale, it is booked as an offer {amount: number of tokens to sell, price: price per token}.
+      * @dev check that the seller has enough tokens to sell, then push the offer in an array of bookings then emit the corresponding event.
       * @param _numberOfTokens number of tokens to sell.
       * @param _price price per token.
       * @return boolean indicating the success of the booking.
@@ -75,7 +84,8 @@ contract ImmoTokenSale {
         index +=1;
         return true;
     }
-/** @dev Allow user to buy the tokens that are for sale
+/** @notice Allow user to buy the tokens that are for sale
+      * @dev check there are enough tokens left for sale in the offer, he sends the correct ether value, then run the transfer
       * @param _seller address of the seller.
       * @param _numberOfTokens number of tokens the buyer wants to buy.
       * @param _index index of the offer in the offerBooking array.
@@ -91,7 +101,9 @@ contract ImmoTokenSale {
         offerBooking[_seller][_index].amount-= _numberOfTokens;
         return true;
     }
-    //Ending Token Sale
+/** @notice Allow admin to end sale
+      * @dev checks the sender is admin and trnasfer the remaining tokens to the admin then selfdestruct
+      */
     function endSale() public {
         //require that only an admin can do this
         require(msg.sender == admin);

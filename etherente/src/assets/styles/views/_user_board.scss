@@ -1,5 +1,4 @@
 .board-container {
-	background: red;
 	width: 100%;
 	position: relative;
 }
@@ -8,10 +7,11 @@
 	left: 50px;
 	top: 50px;
 	width: 700px;
+
 	background: whitesmoke;
 	box-shadow: 5px 5px 5px var(--secondThemeColor);
 	border-radius: 5px;
-	height: 60vh;
+	height: 70vh;
 	display: grid;
 	grid-template-columns: 30% 70%;
 	color: var(--themeColor);
