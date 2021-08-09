@@ -70,7 +70,7 @@ export default {
 		};
 	},
 	computed: {
-		...mapGetters(['getBalance', 'claimPayment']),
+		...mapGetters(['getBalance', 'claimPayment', 'hashMessage']),
 		...mapState(['user', 'web3']),
 	},
 	async created() {
@@ -95,6 +95,7 @@ export default {
 				this.claimAmountText.toString(),
 				'ether'
 			);
+
 			let v = '0x' + this.claimSignatureText.slice(128 + 2, 130 + 2);
 			let r = '0x' + this.claimSignatureText.slice(2, 64 + 2);
 			let s = '0x' + this.claimSignatureText.slice(64 + 2, 128 + 2);
@@ -106,11 +107,12 @@ export default {
 			}
 			const claim = await this.claimPayment({
 				amount: claimAmount,
-				nonce: this.claimNonceText,
+				nonce: parseInt(this.claimNonceText),
 				v,
 				r,
 				s,
 			});
+			console.log(claim);
 		},
 	},
 };

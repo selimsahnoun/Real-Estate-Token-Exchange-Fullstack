@@ -7132,6 +7132,63 @@
     "version": "0.8.6+commit.11564f7e.Emscripten.clang"
   },
   "networks": {
+    "3": {
+      "events": {
+        "0x8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b925": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "_owner",
+              "type": "address"
+            },
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "_spender",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "_value",
+              "type": "uint256"
+            }
+          ],
+          "name": "Approval",
+          "type": "event"
+        },
+        "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "_from",
+              "type": "address"
+            },
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "_to",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "_value",
+              "type": "uint256"
+            }
+          ],
+          "name": "Transfer",
+          "type": "event"
+        }
+      },
+      "links": {},
+      "address": "0x91991a85f9F11A00a1697dAAD7Da8002db9CA42F",
+      "transactionHash": "0xad13846a5ff67f0344dd08d8596735047ac707075b9d11fa50431bbcf0c78137"
+    },
     "5777": {
       "events": {
         "0x8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b925": {
@@ -7186,12 +7243,12 @@
         }
       },
       "links": {},
-      "address": "0xa63Ce909a6846dF8ceB76642b7afE8a0150Ec319",
-      "transactionHash": "0x081c48ab8846577dda050775dd71e0373e5d788cbdffe7a69190df42a13d8468"
+      "address": "0xcf17106744e8545A9455Adef1f50594Ce807e892",
+      "transactionHash": "0xbdf165d8f7861fa18708763681df9b7bc8cd70370bd2b6b95f92f3934afaabab"
     }
   },
   "schemaVersion": "3.1.0",
-  "updatedAt": "2021-08-09T13:25:39.710Z",
+  "updatedAt": "2021-08-09T18:18:19.045Z",
   "networkType": "ethereum",
   "devdoc": {
     "author": "Selim Sahnoun",

@@ -5,7 +5,7 @@ export const state = {
 	accounts: null,
 	saleContract: null,
 	erc20Contract: null,
-	recieverPaysContract: null,
+	ReceiverRentContract: null,
 };
 export const mutations = {
 	SET_ALL_STATE(state, payload) {
@@ -13,7 +13,7 @@ export const mutations = {
 		state.accounts = payload.accounts;
 		state.saleContract = payload.ImmoTokenSaleInstance;
 		state.erc20Contract = payload.ImmoTokenInstance;
-		state.recieverPaysContract = payload.ReceiverPaysInstance;
+		state.ReceiverRentContract = payload.ReceiverRentInstance;
 	},
 
 	SET_TOTAL_TOKENS(state, payload) {
@@ -77,7 +77,7 @@ export const mutations = {
 		await state.web3.eth
 			.sendTransaction({
 				from: state.accounts[0],
-				to: state.recieverPaysContract.options.address,
+				to: state.ReceiverRentContract.options.address,
 				value: payload.rentAmount,
 			})
 			.then((response) => {
@@ -142,23 +142,29 @@ export const getters = {
 	},
 	//Hash payment of the rent
 	hashMessage: (state) => (payload) => {
-		return state.recieverPaysContract.methods
-			.getHashedMessage(payload.reciever, payload.amount, payload.nonce)
+		return state.ReceiverRentContract.methods
+			.getHashedMessage(payload.receiver, payload.amount, payload.nonce)
 			.call({ from: state.accounts[0] })
 			.then((response) => response);
 	},
 	//Claim payment of the rent
 	claimPayment: (state) => (payload) => {
-		return state.recieverPaysContract.methods
+		return state.ReceiverRentContract.methods
 			.claimPayment(
 				payload.amount,
 				payload.nonce,
-				payload.signature,
 				payload.v,
 				payload.r,
 				payload.s
 			)
 			.send({ from: state.accounts[0] })
 			.then((response) => response);
+	},
+	//Get signature
+	getSignature: (state) => (payload) => {
+		return state.web3.eth.accounts.sign(
+			payload.hash,
+			process.env.VUE_APP_OWNER_PRIVATE_KEY
+		);
 	},
 };

@@ -16,11 +16,11 @@
 		<h1>Sign rent</h1>
 		<div>
 			<input
-				v-model="recieverAddress"
+				v-model="receiverAddress"
 				type="text"
-				name="recieverAddress"
+				name="receiverAddress"
 				value
-				placeholder="Reciever Address"
+				placeholder="Receiver Address"
 			/>
 
 			<input
@@ -44,19 +44,18 @@
 </template>
 
 <script>
-import * as paimentHelpers from './../../paimentHelpers.js';
 import { mapGetters, mapState } from 'vuex';
 export default {
 	name: 'SendRent',
 	computed: {
 		...mapState(['web3']),
-		...mapGetters(['hashMessage']),
+		...mapGetters(['hashMessage', 'getSignature']),
 	},
 	data() {
 		return {
 			rentToSend: null,
 			messageToSign: null,
-			recieverAddress: null,
+			receiverAddress: null,
 			amount: null,
 			nonce: null,
 			signature: null,
@@ -69,7 +68,9 @@ export default {
 					this.rentToSend.toString(),
 					'ether'
 				);
-				this.$store.dispatch('sendRentToContract', { rentAmount: rentAmount });
+				this.$store.dispatch('sendRentToContract', {
+					rentAmount: rentAmount,
+				});
 			} catch (error) {
 				// Catch any errors for any of the above operations.
 				alert(`Send Rent Failed. Check console for details.`);
@@ -78,54 +79,18 @@ export default {
 		},
 		async signRent() {
 			try {
-				// 	'0x7dC1E9bb0D4cC9D013c347f8Df427Dbf4c3377C9',
+				//0xB88a277eB6E9ADb6D86751D2E3bA23059d08B275
 				const amount = await this.web3.web3.utils.toWei(
 					this.amount.toString(),
 					'ether'
 				);
 				const hash = await this.hashMessage({
-					reciever: this.recieverAddress,
+					receiver: this.receiverAddress,
 					amount,
-					nonce: this.nonce,
+					nonce: parseInt(this.nonce),
 				});
-				// const hash = await this.web3.web3.utils.soliditySha3(
-				// 	{
-				// 		t: 'address',
-				// 		v: this.recieverAddress,
-				// 	},
-				// 	{
-				// 		t: 'uint256',
-				// 		v: amount,
-				// 	},
-				// 	{
-				// 		t: 'uint256',
-				// 		v: this.nonce,
-				// 	}
-				// );
-				console.log('hash : ', hash);
-				// var signature = await this.web3.web3.eth.personal.sign(
-				// 	hash,
-				// 	'0xb358BBbc3E3636a83D2AE83e297BC6E0bEF5C820'
-				// );
-				var signature = await this.web3.web3.eth.accounts.sign(
-					hash,
-					'0x3ea16358ae049a131968351949b1dbf43248b6175e4e26e24bb18bad363809ea'
-				);
-				// var messageBuffer = (hash, 'hex');
-				// var r = signature.substring(0, 64);
-				// var s = signature.substring(64, 128);
-				// var v = signature.substring(128, 130);
-				var recoveredAddress = this.web3.web3.eth.accounts.recover(
-					signature.message,
-					signature.v,
-					signature.r,
-					signature.s
-				);
-
-				// signature =
-				// 	signature.substr(0, 130) +
-				// 	(signature.substr(130) == '00' ? '1b' : '1c');
-				this.signature = { recoveredAddress, signature };
+				const { signature } = this.getSignature({ hash: hash });
+				this.signature = signature;
 			} catch (error) {
 				// Catch any errors for any of the above operations.
 				alert(`Sign Rent Failed. Check console for details.`);

@@ -25,7 +25,7 @@ contract ReceiverRent {
         payable(msg.sender).transfer(_amount);
     }
     /// @notice returns a hashed message to sign
-    /// @dev hashe a message through a view function 
+    /// @dev hash a message through a view function 
     /// @param _receiver address to receive rent
     /// @return hashed 32 bytes message
     function getHashedMessage(address _receiver, uint256 _amount, uint256 _nonce) view public returns (bytes32) {
