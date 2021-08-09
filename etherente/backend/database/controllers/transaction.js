@@ -1,5 +1,5 @@
 const Transaction = require('./../models/transaction.js');
-const SellOffer = require('./../models/SellOffer.js');
+const SellOffer = require('./../models/sell-offer.js');
 // add a Transaction to the Transactions collection
 exports.createTransaction = (transaction) => {
 	return Transaction.create(transaction);
