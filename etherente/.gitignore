@@ -2,7 +2,7 @@
 node_modules
 /dist
 
-/backend/database/index.js
+backend/database/index.js
 
 # local env files
 .env.local

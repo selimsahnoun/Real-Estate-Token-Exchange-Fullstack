@@ -275,7 +275,7 @@ FakesAssemblies/
 .ntvs_analysis.dat
 node_modules/
 dist/ 
-/etherente/backend/database/index.js
+etherente/backend/database/index.js
 
 # Visual Studio 6 build log
 *.plg
