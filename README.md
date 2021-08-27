@@ -10,6 +10,10 @@ Etherente replaces paper deeds with digital tokens; a new mechanism for asset ow
 
 #### Reminder: this project is for educational purposes only, no ownership is transmitted through this project.
 
+### click on image to be directed to youtube for video demo
+
+[<img src="https://img.youtube.com/vi/3WfImy655K8/maxresdefault.jpg" width="50%">](https://youtu.be/3WfImy655K8)
+
 ## What is Tokenization?
 
 ‘Tokenization’ refers to the process of defining ownership over something as ownership in a digital token on Ethereum, which an ‘off-chain asset’ becomes represented ‘on-chain’. On-chain refers to being included in the Ethereum blockchain. 
